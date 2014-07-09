@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 _s
 ===
 
@@ -41,3 +42,9 @@ Then, update the stylesheet header in `style.css` and the links in `footer.php` 
 Now you're ready to go! The next step is easy to say, but harder to do: make an awesome WordPress theme. :)
 
 Good luck!
+=======
+candybee
+========
+
+candybee.vn
+>>>>>>> 00d3c12572fe30a656d1078c7ba05f99140f9119
