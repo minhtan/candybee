@@ -1,21 +1,39 @@
 //variables
-$color1: #aa3e39
-$color2: #378b2e
+$color1: #aa3e39 //red
+$color2: #378b2e //green
+$color3: #e57d04 //orange
+$color4: #ecf0f1 //white
+
+//ultil
+.hidden
+	width: 0 !important
+.data-toggle
+	display: none
 
 //style
+body
+	color: $color4
+
 .first-half, .second-half
 	float: left
 	height: 100%
 	width: 50%
 	cursor: pointer
-	+transition-delay(0.2s)
+	overflow-x: hidden
 	+transition-duration(0.4s)
 	+transition-timing-function(ease-out)
 	+preserve3d
+	.title
+		margin: 0
+		line-height: 64px
 	.vertical-center
 		+vertical-center
 	.visual
 		display: block
+		margin: 0
+		span
+			text-indent: -9999px
+			// display: inline-block
 	&.open
 		width: 91.66667%
 		cursor: default
@@ -28,13 +46,15 @@ $color2: #378b2e
 			width: 100%
 			height: 90%
 		&.closed
+			overflow-y: hidden
 			width: 100%
 			height: 10%
 
+//-----------------------------------------------------------------------------
+//------------------------------------FIRST HALF-------------------------------
+//-----------------------------------------------------------------------------
 .first-half
 	background: $color1
-	.visual
-		margin: 0
 	.logo-candy, .logo-bee
 		display: inline-block
 		+transition-duration(0.2s)
@@ -46,9 +66,77 @@ $color2: #378b2e
 	.logo-bee
 		width: 78px
 		background-position: -167px 0px
-	&.closed
-		.logo-candy
-			width: 0
+	.logo-info
+		text-indent: 0 !important
+		vertical-align: -webkit-baseline-middle
+		vertical-align: bottom
+		line-height: 52px
+		font-family: 'UTM'
+
+//navigation
+.bee-control
+	position: fixed
+	top: 0
+	left: -100%
+	margin: 0
+	padding: 0
+	+transition-duration(0.4s)
+	li
+		display: block
+		height: 64px
+		width: 64px
+		&.about
+			background: $color1
+			a
+				background: url(../img/icons/three_32.png) no-repeat center
+		&.benefit
+			background: $color3
+	li > a
+		display: block
+		margin: 0
+		padding: 0
+		width: 100%
+		height: 100%
+		text-indent: -9999px
+		outline-color: transparent
+	+max-screen($grid-max-width)
+		li
+			float: left
+.admin-bar .bee-control
+	top: 32px
+	+max-screen($grid-max-width)
+		top: 46px
+
+//content
+.bee-content-wrap
+	margin: 0
+	height: 100%
+	+box-sizing(border-box)
+	+transition-delay(0.2s)
+	.bee-content
+		height: 100%
+	#info-intro
+		font-size: 20px
+		padding: 15px
+
+//FIRST HALF OPEN
+.first-half.open
+	.bee-control
+		left: 0
+	.bee-content-wrap
+		padding-left: 64px
+		+max-screen($grid-max-width)
+			padding-left: 0
+			padding-top: 64px
+
+//-----------------------------------------------------------------------------
+//------------------------------------SECOND HALF------------------------------
+//-----------------------------------------------------------------------------
 .second-half
 	background: $color2
-	
+	.logo-honey
+		display: inline-block
+		+transition-duration(0.2s)
+		height: 76px
+		background: url(../img/honey_64.png) no-repeat
+		background-size: 100% 100%

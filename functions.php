@@ -106,6 +106,10 @@ function candybee_scripts() {
 
 	wp_enqueue_script( 'jquery-script', get_template_directory_uri() . '/js/jquery-2.1.1.min.js', array(), '2.1.1', true );
 
+	wp_enqueue_script( 'jquery-ui-script', get_template_directory_uri() . '/js/jquery-ui.min.js', array(), '1.11.0', true );
+
+	wp_enqueue_script( 'furatto-script', get_template_directory_uri() . '/js/furatto.min.js', array(), '1.0', true );
+
 	wp_enqueue_script( 'candy-front-script', get_template_directory_uri() . '/js/tan.js', array(), '1.0', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

@@ -13,11 +13,11 @@ function setHeight(){
 }
 
 //toggle section
-function toggleSection(thiz, that){
-	thiz.removeClass("closed");
-	thiz.addClass("open");
-	$(that).removeClass("open");
-	$(that).addClass("closed");
+function toggleSection(open, close){
+	$(open).removeClass("closed");
+	$(open).addClass("open");
+	$(close).removeClass("open");
+	$(close).addClass("closed");
 }
 
 $(document).ready(function() {
@@ -25,15 +25,27 @@ $(document).ready(function() {
 	$('.first-half').click(function(){
 		if( $(this).hasClass("open") ){
 		}else{
-			toggleSection($(this), ".second-half");
+			toggleSection(".first-half", ".second-half");
+			setTimeout(function(){ 
+				$(".logo-candy").removeClass("hidden");
+				$(".data-toggle").show("drop", 400);
+				$('#logo-bee').removeClass("vertical-center");
+			}, 400);
 		}
 	});
 	$('.second-half').click(function(){
 		if( $(this).hasClass("open") ){
 		}else{
-			toggleSection($(this), ".first-half");
+			$(".logo-candy").addClass("hidden");
+			setTimeout(function(){ 
+				toggleSection(".second-half", ".first-half");
+				$(".data-toggle").hide("drop", 400);
+				$("#tabs").tabs( "option", "active", 0 );
+				$('#logo-bee').addClass("vertical-center");
+			}, 200);
 		}
 	});
+	$("#tabs").tabs();
 });
 $(window).resize(function(){
 	setHeight();
