@@ -3546,3 +3546,7 @@ body {
   min-height: 980px;
   background: #ecf0f1;
 }
+
+.title-second {
+  font-family: UTM;
+}

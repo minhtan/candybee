@@ -64,6 +64,14 @@ get_header(); ?>
 	</section>
 	<section class="second-half">
 		<div class="section-content">
+			<div class="post-listing">
+				<h1 class="title-second">Kiến thức mật ong</h1>
+				<div class="row">
+					<div class="col-4"></div>
+					<div class="col-4"></div>
+					<div class="col-4"></div>
+				</div>
+			</div>
 		</div>
 		<div class="section-cover">
 			<span class="visual text-center vertical-center">
