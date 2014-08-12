@@ -149,6 +149,7 @@ $(document).ready(function() {
 		toggleSectionContent(".second-half", ".first-half");
 		setTimeout(function () {
 	        beeScroll.scrollTo(0,0);
+	        postScroll.refresh();
 	    }, 800);
 
 	});

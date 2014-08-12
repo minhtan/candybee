@@ -20,6 +20,9 @@ function get_data_ajax(clientPost){
 			var json_data = $.parseJSON(data);
 			$('.post-list').append(json_data);
 			$('.view-more').html('View more');
+			setTimeout(function () {
+		        postScroll.refresh();
+		    }, 0);
 		},
 		error: function(){
 			alert('Load post error');

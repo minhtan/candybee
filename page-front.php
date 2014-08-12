@@ -107,8 +107,8 @@ Ngày nay, công nghệ càng phát triển, xã hội công nghiệp hóa, các
 		</div>
 	</section>
 	<section class="second-half">
-		<div class="section-content">
-			<div class="post-scroll" id="post-scroll">
+		<div class="section-content" id="post-scroll">
+			<div class="post-scroll">
 				<div class="post-listing">
 					<h1 class="title-second text-center">Kiến thức mật ong</h1>
 					<ul class="post-list">
