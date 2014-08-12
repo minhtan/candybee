@@ -1,4 +1,4 @@
-//safeguard array.map function
+//prototype functions
 if (!Array.prototype.map)
 {
   Array.prototype.map = function(fun /*, thisp*/)
@@ -22,9 +22,8 @@ if (!Array.prototype.map)
 //script begin
 $(document).ready(function() {
 	//set document height to 100%
+	var winHeight = $(window).height();
 	function setHeight(){
-		var winHeight = $(window).height();
-
 		var adminbar;
 		if( $("#wpadminbar").length ){
 			adminbar = $("#wpadminbar").height();
@@ -89,55 +88,41 @@ $(document).ready(function() {
 	});
 
 	//compute element in view
-	var nav = ["info", "benefit", "price"]; //sections id - MUST be in correct order
+	var nav = [];
+	$('#candybee-content .bee-content-wrap .bee-content').each(function(){
+		nav.push( $(this).attr('id') );
+	});
+	var remainPer = 0.2; //remaining percentage of section required to be considered active
 	var navHeight;
-	var navPos = [];
 	//calculate nav-section position
-	function calNavPos(){
+	function calNavHeight(){
 		navHeight = nav.map(function(section){
 			section = '#' + section;
 	  		return $(section).height();
 		});
-		for (var i = 0; i < navHeight.length; i++) {
-			if(i === 0)
-				navPos[i] = 0;
-			else
-				navPos[i] = navPos[i-1] + navHeight[i-1];
-		};
 	}
-	function setActiveNav(scrollPos){
-		$('.bee-control li').removeClass('active');
-		for (var i = 0; i < navPos.length; i++) {
-			if(i < navPos.length -1){
-				if(scrollPos >= navPos[i] && scrollPos < navPos[i+1]){
-					$('.bee-control').find('.'+nav[i]).addClass('active');
-					return;
-				}
-			}
-			else{
-				if (scrollPos >= navPos[i]){
-					$('.bee-control').find('.'+nav[i]).addClass('active');
-					return;
-				}
-			}
-		}
-	}
-	function setActiveNav2(){
+	function setActiveNav(){
+		var remain;
 		for (var i = 0; i < nav.length; i++) {
-			if( $(nav).offset().top + $(nav).height() > $(window).height() ){
-
+			remain = ( $('#'+nav[i]).offset().top + navHeight[i] ) / winHeight;
+			if(remain > remainPer){
+				if( $('.bee-control').find('.'+nav[i]).hasClass('active') ){}
+				else{
+					$('.bee-control li').removeClass('active');
+					$('.bee-control').find('.'+nav[i]).addClass('active');
+				}
+				return;
 			}
 		}
 	}
-	setActiveNav(0);
 	beeScroll.on('scrollEnd', function(){
-		setActiveNav(this.y * -1);
+		setActiveNav();
 	});
 
 	//scroll navigation
 	$('.bee-control li').click(function(){
 		var el = '#' + $(this).attr('nav');
-		beeScroll.scrollToElement(el);
+		beeScroll.scrollToElement(el, 1000);
 	});
 
 	//toggle sections
@@ -145,7 +130,8 @@ $(document).ready(function() {
 		toggleSectionContent(".first-half", ".second-half");
 		setTimeout(function () {
 	        beeScroll.refresh();
-	        calNavPos();
+	        calNavHeight();
+	        setActiveNav();
 	    }, 800);
 	});
 	$('.second-half').click(function(){
@@ -153,16 +139,17 @@ $(document).ready(function() {
 		setTimeout(function () {
 	        beeScroll.scrollTo(0,0);
 	    }, 800);
+
 	});
 
 	//resize function
 	$(window).resize(function(){
+		winHeight = $(window).height();
 		setHeight();
-		calNavPos();
+		calNavHeight();
 		setTimeout(function () {
 	        beeScroll.refresh();
-	        setActiveNav(beeScroll.y * -1);
+	        setActiveNav();
 	    }, 0);
 	});
-
 });
