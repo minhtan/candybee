@@ -5,7 +5,7 @@ $(document).ready(function(){
 	});
 });
 
-function get_data_ajax(clientPost){
+function get_data_ajax(clientPost ){
 	$.ajax({
 		url: ajax.url,
 		async: false,

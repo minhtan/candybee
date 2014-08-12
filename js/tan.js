@@ -19,6 +19,8 @@ if (!Array.prototype.map)
   };
 }
 
+var beeScroll;
+var postScroll;
 //script begin
 $(document).ready(function() {
 	//set document height to 100%
@@ -77,7 +79,7 @@ $(document).ready(function() {
 	);
 
 	//init IScroll for bee content
-	var beeScroll = new IScroll('#candybee-content', {
+	beeScroll = new IScroll('#candybee-content', {
 		mouseWheel: true,
 		scrollbars: true,
 		fadeScrollbars: true,
@@ -88,7 +90,7 @@ $(document).ready(function() {
 	});
 
 	//init scroll for post content
-	var postScroll = new IScroll('#post-scroll', {
+	postScroll = new IScroll('#post-scroll', {
 		mouseWheel: true,
 		scrollbars: true,
 		fadeScrollbars: true,
@@ -161,6 +163,7 @@ $(document).ready(function() {
 		calNavHeight();
 		setTimeout(function () {
 	        beeScroll.refresh();
+	        postScroll.refresh();
 	        setActiveNav();
 	    }, 0);
 	});
