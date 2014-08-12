@@ -165,6 +165,6 @@ $(document).ready(function() {
 	        beeScroll.refresh();
 	        postScroll.refresh();
 	        setActiveNav();
-	    }, 0);
+	    }, 400);
 	});
 });
