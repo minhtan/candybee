@@ -65,14 +65,14 @@ get_header(); ?>
 	<section class="second-half">
 		<div class="section-content">
 			<div class="post-listing">
-				<h1 class="title-second">Kiến thức mật ong</h1>
-				<div class="row">
-					<div class="col-4"></div>
-					<div class="col-4"></div>
-					<div class="col-4"></div>
+				<h1 class="title-second text-center">Kiến thức mật ong</h1>
+				<ul class="post-list">
+				</ul>
+				<div class="text-center view-more-wrap">
+					<span class="view-more">View more</span>
 				</div>
 			</div>
-		</div>
+		</div>  
 		<div class="section-cover">
 			<span class="visual text-center vertical-center">
 				<!-- <span class="invi logo-honey">Kien thuc mat ong</span> -->
