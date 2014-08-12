@@ -87,6 +87,17 @@ $(document).ready(function() {
 		click: true
 	});
 
+	//init scroll for post content
+	var postScroll = new IScroll('#post-scroll', {
+		mouseWheel: true,
+		scrollbars: true,
+		fadeScrollbars: true,
+		interactiveScrollbars: true,
+		shrinkScrollbars: 'clip',
+		useTransition: false,
+		click: true
+	});
+
 	//compute element in view
 	var nav = [];
 	$('#candybee-content .bee-content-wrap .bee-content').each(function(){

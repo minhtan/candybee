@@ -108,12 +108,17 @@ Ngày nay, công nghệ càng phát triển, xã hội công nghiệp hóa, các
 	</section>
 	<section class="second-half">
 		<div class="section-content">
-			<div class="post-listing">
-				<h1 class="title-second text-center">Kiến thức mật ong</h1>
-				<ul class="post-list">
-				</ul>
-				<div class="text-center view-more-wrap">
-					<span class="view-more">View more</span>
+			<div class="post-scroll" id="post-scroll">
+				<div class="post-listing">
+					<h1 class="title-second text-center">Kiến thức mật ong</h1>
+					<ul class="post-list">
+					</ul>
+					<div class="text-center view-more-wrap">
+						<span class="view-more">View more</span>
+					</div>
+				</div>
+				<div class="post-detail">
+					<!-- detail goes here -->
 				</div>
 			</div>
 		</div>  
