@@ -18,8 +18,13 @@ function get_data_ajax(clientPost ){
 		},
 		success: function(data){
 			var json_data = $.parseJSON(data);
-			$('.post-list').append(json_data);
-			$('.view-more').html('View more');
+			$('.post-list').append(json_data.html);
+			if(json_data.has_post_remain){
+				$('.view-more').html('View more');
+			}else{
+				$('.view-more').remove();
+			}
+			
 			setTimeout(function () {
 		        postScroll.refresh();
 		    }, 0);

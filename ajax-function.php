@@ -14,9 +14,15 @@ add_action( 'wp_enqueue_scripts', 'useAjax');
 
 function return_posts(){
 	$client_post = $_POST['clientPost'];
+	$post_list = get_posts(array('orderby' => 'post_date','posts_per_page' => -1) );
+	$total_post = count($post_list);
 	$return_post = check_return_post($client_post);
-	$result = get_result($client_post, $return_post);
-	echo json_encode(create_post_html($result, $return_post));
+	$result = get_result($client_post, $return_post, $total_post);
+	$has_post_remain = has_post_remain($total_post, $client_post, count($result));
+	$result_html = create_post_html($result, $return_post);
+	$return_data = array('html' => $result_html, 'has_post_remain' => $has_post_remain);
+
+	echo json_encode($return_data);
 	die();
 }
 add_action("wp_ajax_nopriv_return_posts","return_posts");
@@ -29,18 +35,24 @@ function check_return_post($client_post){
 		return 7;
 	}
 }
-function get_result($client_post, $return_post){
-	$post_list = get_posts(array('orderby' => 'post_date','posts_per_page' => -1) );
-	$total_post = count($post_list);
+function get_result($client_post, $return_post, $total_post){
 	$sub_post = $total_post - $client_post;
-	$result;
-
+	$result_list;
+	$has_post_remain;
 	if($sub_post < $return_post){
-		$result = get_posts(array('orderby' => 'post_date', 'offset' => $client_post, 'posts_per_page' => $sub_post));
+		$result_list = get_posts(array('orderby' => 'post_date', 'offset' => $client_post, 'posts_per_page' => $sub_post));
 	}else if($sub_post >= $return_post){
-		$result = get_posts(array('orderby' => 'post_date', 'offset' => $client_post, 'posts_per_page' => $return_post));
+		$result_list = get_posts(array('orderby' => 'post_date', 'offset' => $client_post, 'posts_per_page' => $return_post));
 	}
-	return $result;
+	return $result_list;
+}
+
+function has_post_remain($total_post, $client_post, $sub_post){
+	if($client_post + $sub_post < $total_post){
+		return true;
+	}else{
+		return false;
+	}
 }
 
 function create_post_html($result, $return_post){
