@@ -122,7 +122,7 @@ $(document).ready(function() {
 	//scroll navigation
 	$('.bee-control li').click(function(){
 		var el = '#' + $(this).attr('nav');
-		beeScroll.scrollToElement(el);
+		beeScroll.scrollToElement(el, 1000);
 	});
 
 	//toggle sections
