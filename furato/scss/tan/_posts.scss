@@ -5,11 +5,17 @@ $hex-height-small : 60px;
 .title-second{
 	font-family:UTM;
 }
+.post-block{
+	width: 100%;
+	float: left;
+}
 .view-more{
 	@include button;
 }
 .view-more-wrap{
-	clear: both;
+	margin: 40px 0 40px 0;
+	width: 100%;
+	float: left;
 }
 .post{
 	@include box-sizing(border-box);
@@ -26,6 +32,15 @@ $hex-height-small : 60px;
 		padding: 0 2px;
 	}
 
+}
+.post-listing{
+	width: 100%;
+	float: left;
+}
+
+.post-scroll{
+	width: 100%;
+	float: left;
 }
 .post-list{
 	width: 678px;

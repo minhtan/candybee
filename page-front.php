@@ -111,8 +111,9 @@ Ngày nay, công nghệ càng phát triển, xã hội công nghiệp hóa, các
 			<div class="post-scroll">
 				<div class="post-listing">
 					<h1 class="title-second text-center">Kiến thức mật ong</h1>
-					<ul class="post-list">
-					</ul>
+					<div class="post-block">
+						<ul class="post-list"></ul>
+					</div>
 					<div class="text-center view-more-wrap">
 						<span class="view-more">View more</span>
 					</div>
