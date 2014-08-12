@@ -109,14 +109,14 @@ Ngày nay, công nghệ càng phát triển, xã hội công nghiệp hóa, các
 	<section class="second-half">
 		<div class="section-content">
 			<div class="post-listing">
-				<h1 class="title-second">Kiến thức mật ong</h1>
-				<div class="row">
-					<div class="col-4"></div>
-					<div class="col-4"></div>
-					<div class="col-4"></div>
+				<h1 class="title-second text-center">Kiến thức mật ong</h1>
+				<ul class="post-list">
+				</ul>
+				<div class="text-center view-more-wrap">
+					<span class="view-more">View more</span>
 				</div>
 			</div>
-		</div>
+		</div>  
 		<div class="section-cover">
 			<span class="visual text-center vertical-center">
 				<img src="<?php echo get_template_directory_uri(); ?>/img/honey_64.png" alt="Kien thuc mat ong">

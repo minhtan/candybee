@@ -115,10 +115,14 @@ function candybee_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-
+	// /** Register JavaScript Functions File */
+	//  wp_register_script( 'functions', esc_url( trailingslashit( get_template_directory_uri() ) . '/js/ajax.js' ), array( 'jquery' ), '1.0', true );
+	 
+	// /** Localize Scripts */
+	//  wp_localize_script( 'functions', 'ajax', array( 'url' => admin_url( 'admin-ajax.php' ) ) );
+	//  wp_enqueue_script( 'functions' );
 }
 add_action( 'wp_enqueue_scripts', 'candybee_scripts' );
-
 /**
  * Implement the Custom Header feature.
  */
@@ -143,3 +147,8 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+$dirName = dirname(__FILE__);
+$baseName = basename(realpath($dirName));
+require_once ("$dirName/ajax-function.php");
+	

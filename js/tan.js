@@ -139,6 +139,7 @@ $(document).ready(function() {
 		setTimeout(function () {
 	        beeScroll.scrollTo(0,0);
 	    }, 800);
+
 	});
 
 	//resize function
@@ -151,5 +152,4 @@ $(document).ready(function() {
 	        setActiveNav();
 	    }, 0);
 	});
-
 });

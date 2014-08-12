@@ -1,4 +1,157 @@
 //second-half
+$hex-height : 120px;
+$hex-height-small : 60px;
+
 .title-second{
 	font-family:UTM;
+}
+.view-more{
+	@include button;
+}
+.view-more-wrap{
+	clear: both;
+}
+.post{
+	@include box-sizing(border-box);
+	display: block;
+	padding: 0px;
+}
+.post-title{
+	z-index: 9999;
+	margin: 0;
+	padding: 0 5px;
+	font-size: 19px;
+	@include max-screen(480px){
+		font-size: 11px;
+		padding: 0 2px;
+	}
+
+}
+.post-list{
+	width: 678px;
+	margin: 0 auto;
+	padding-top: 50px;
+	@include max-screen(1200px){
+		width: 678px;
+	}
+	@include max-screen(768px){
+		width: 480px;
+	}
+	@include max-screen(480px){
+		width: 300px;
+	}
+
+}
+.post-title-bg{
+	width: auto;
+	height: $hex-height;
+	@include max-screen(768px){
+		height: $hex-height / 1.4154;
+	}
+	@include max-screen(480px){
+		height: $hex-height / 2.3106;
+	}
+}
+
+// begin hex
+.hex {
+    width: $hex-height * 1.73333;
+    height: $hex-height;
+    background-color: #ccc;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;            
+    background-size: auto $hex-height * 2;                            
+    position: relative;
+    float:left;
+    margin:37px 9px;
+    text-align:center;
+    zoom:1;
+    @include max-screen(768px){
+    	width: $hex-height / 1.4154 * 1.73333;
+    	height: $hex-height / 1.4154;
+    	background-size: auto $hex-height / 1.4154 * 2;
+    	margin:28px 6px;
+    }
+    @include max-screen(480px){
+    	width: $hex-height / 2.3106 * 1.73333;
+    	height: $hex-height / 2.3106;
+    	background-size: auto $hex-height / 2.3106 * 2;
+    	margin:17px 4px;
+    }
+}
+.hex .corner-1,
+.hex .corner-2 {
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: inherit;                                
+    z-index:-2;                        
+    overflow:hidden;        
+    backface-visibility: hidden;          
+}
+
+.hex .corner-1 {
+    z-index:-1;
+    transform: rotate(60deg);
+}
+
+.hex .corner-2 {
+    transform: rotate(-60deg);
+}
+
+.hex .corner-1:before,
+.hex .corner-2:before {
+    width: $hex-height * 2;
+    height:    $hex-height * 2;
+	content: '';
+	position: absolute;
+	background: inherit;
+	top:0;
+	left: 0;
+	z-index: 1;
+	background: inherit;
+	background-repeat:no-repeat;
+	backface-visibility: hidden;  
+	@include max-screen(768px){
+		width: $hex-height / 1.4154 * 2;
+		height: $hex-height / 1.4154 * 2;
+	}     
+	@include max-screen(480px){
+		width: $hex-height / 2.3106 * 2;
+		height: $hex-height / 2.3106 * 2;
+	}         
+}            
+
+.hex .corner-1:before {
+	transform: rotate(-60deg) translate($hex-height * -0.99, 0px);    
+	transform-origin: 0 0;
+	@include max-screen(768px){
+		transform: rotate(-60deg) translate(-85.1px, 0px);    
+	}
+	@include max-screen(480px){
+		transform: rotate(-60deg) translate(-52.3px, 1.6px); 
+	}
+}            
+
+.hex .corner-2:before {
+    transform: rotate(60deg) translate(-59px, -16px);    
+    bottom:0;
+    @include max-screen(768px){
+    	transform: rotate(60deg) translate(-43px, -11.6px); 
+    }
+    @include max-screen(480px){
+		transform: rotate(60deg) translate(-24.3px, -5.4px); 
+	}
+}        
+
+.hex-gap {
+    margin-left: $hex-height;
+    @include max-screen(768px){
+    	margin-left: $hex-height / 1.4154;
+    }
+    @include max-screen(480px){
+    	margin-left: $hex-height / 2.3106;
+    }
 }
