@@ -11,13 +11,18 @@ body
 	color: $color4
 *:focus
 	outline: 0
+.candyfront
+	position: relative
+	overflow: hidden
 .first-half, .second-half
-	float: left
+	position: absolute
+	top: 0
+	left: 0
 	height: 100%
-	width: 50%
+	width: 100%
 	cursor: pointer
 	overflow: hidden
-	position: relative
+	+box-sizing(border-box)
 	+transition-duration(0.4s)
 	+transition-timing-function(ease-out)
 	.section-cover
@@ -25,15 +30,33 @@ body
 		width: 100%
 		position: absolute
 		top: 0
-		+preserve3d
+		left: 0
 		+transition-duration(0.4s)
 		+transition-timing-function(ease-out)
+		.helper
+			height: 100%
+			width: 50%
+			+transition-duration(0.4s)
+			+transition-timing-function(ease-out)
+			+media-portrait($grid-max-width)
+				height: 50%
+				width: 100%
+		.cover
+			height: 100%
+			width: 50%
+			+preserve3d
+			+transition-duration(0.4s)
+			+transition-timing-function(ease-out)
+			+media-portrait($grid-max-width)
+				height: 50%
+				width: 100%
 	.section-content
 		width: 100%
 		height: 100%
 		position: absolute
 		z-index: 1
 		top: 0
+		left: 0
 		overflow: hidden
 		+transition-duration(0.4s)
 		+transition-timing-function(ease-out)
@@ -48,29 +71,26 @@ body
 		img
 			height: auto
 			max-width: 100%
-			+transition-duration(0.4s)
-			+transition-timing-function(ease-out)
-			+transition-delay(0.4s)
 	&.open
-		width: 91.66667%
 		cursor: default
 	&.closed
-		width: 8.33333%
-	+media-portrait($grid-max-width)
-		width: 100%
-		height: 50%
-		&.open
-			width: 100%
-			height: 90%
-		&.closed
-			width: 100%
-			height: 10%
+		.section-cover .cover
+			width: 8%
+			+media-portrait($grid-max-width)
+				width: 100%
+				height: 10%
+		.section-cover .helper
+			width: 92%
+			+media-portrait($grid-max-width)
+				width: 100%
+				height: 90%
 
 //-----------------------------------------------------------------------------
 //------------------------------------FIRST HALF-------------------------------
 //-----------------------------------------------------------------------------
 .first-half
 	background: $color1
+	+transform(translateX(-50%))
 	img
 		height: auto
 		max-width: 100%
@@ -79,19 +99,52 @@ body
 		line-height: 52px
 		font-family: 'UTM'
 	.section-content
-		left: -100%
+		padding-left: 8%
+		+transform(translateX(-100%))
 	.section-cover
-		left: 0
+		+transform(translateX(0))
+		.helper
+			float: left
+		.cover
+			float: right
 	.bee-content
 		padding-top: 64px
+	.bee-control
+		position: fixed
+		top: 0
+		left: 8%
+		margin: 0
+		padding: 0
+		width: 92%
+		+transform(translateX(-100%))
+		+transition-duration(0.4s)
+		+transition-timing-function(ease-out)
+	+media-portrait($grid-max-width)
+		+transform(translate(0, -50%))
+		.section-content
+			padding-left: 0
+		.bee-control
+			top: 10%
+			left: 0
+			width: 100%
+
 //first half open
 .first-half.open
+	+transform(translateX(-8%))
 	.bee-control.open
-		left: 0
+		+transform(translateX(0))
 	.section-cover.open
-		left: 100%
+		+transform(translateX(100%))
 	.section-content.open
-		left: 0
+		+transform(translateX(0))
+	+media-portrait($grid-max-width)
+		+transform(translate(0, -10%))
+		
+//first half closed
+.first-half.closed
+	+transform(translateX(-92%))
+	+media-portrait($grid-max-width)
+		+transform(translate(0, -90%))
 
 //content
 .bee-content-wrap
@@ -106,6 +159,7 @@ body
 //-----------------------------------------------------------------------------
 .second-half
 	background: $color2
+	+transform(translateX(50%))
 	.logo-honey
 		display: inline-block
 		height: 64px
@@ -114,13 +168,31 @@ body
 		vertical-align: bottom
 		margin-left: -18px
 	.section-content
-		right: -100%
+		+transform(translateX(100%))
+		padding-right: 8%
 	.section-cover
-		right: 0
+		+transform(translateX(0))
+		.helper
+			float: right
+		.cover
+			float: left
+	+media-portrait($grid-max-width)
+		+transform(translate(0, 50%))
+		.section-content
+			padding-right: 0
 
 //second half open
 .second-half.open
+	+transform(translateX(8%))
 	.section-cover.open
-		right: 100%
+		+transform(translateX(-100%))
 	.section-content.open
-		right: 0
+		+transform(translateX(0))
+	+media-portrait($grid-max-width)
+		+transform(translate(0, 10%))
+
+//second half closed
+.second-half.closed
+	+transform(translateX(92%))
+	+media-portrait($grid-max-width)
+		+transform(translate(0, 90%))

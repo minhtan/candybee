@@ -8,7 +8,7 @@ get_header(); ?>
 		<div class="section-content" id="candybee-content">
 			<div class="bee-content-wrap">
 				<section class="bee-content" id="info">
-					<h1 class="visual text-center" id="logo-bee">
+					<h1 class="text-center" id="logo-bee">
 						<img src="<?php echo get_template_directory_uri(); ?>/img/logobee_64.png" alt="Candy Bee">
 						<span class="logo-info"> - mật ong chất</span>
 					</h1>
@@ -73,12 +73,76 @@ Ngày nay, công nghệ càng phát triển, xã hội công nghiệp hóa, các
 							</p>
 						</article>
 						<p class="text-center col-12">
-							<span>Đọc thêm chi tiết về công dụng của mật ong tại đây: </span><span id="go-to-2nd-half"></span>
+							<span class="benefit-read-more">Đọc thêm chi tiết về công dụng của mật ong tại đây: </span><span id="go-to-2nd-half"></span>
 						</p>
 					</div>
 				</section>
 				<section class="bee-content" id="media">
 					<h2>Hình ảnh sản phẩm</h2>
+					<div class="slider">
+						<div class="row product-image">
+							<div class="col-3 nopadding">
+								<span class="fancy fancybox" rel="group" data-fancybox-href="<?php echo get_template_directory_uri(); ?>/img/bim.jpg">
+									<img src="<?php echo get_template_directory_uri(); ?>/img/tyrael.jpg" alt="">
+								</span>
+							</div>
+							<div class="col-3 nopadding">
+								<span class="fancy fancybox" rel="group" data-fancybox-href="<?php echo get_template_directory_uri(); ?>/img/bim.jpg">
+									<img src="<?php echo get_template_directory_uri(); ?>/img/tyrael.jpg" alt="">
+								</span>
+							</div>
+							<div class="col-3 nopadding">
+								<span class="fancy fancybox" rel="group" data-fancybox-href="<?php echo get_template_directory_uri(); ?>/img/bim.jpg">
+									<img src="<?php echo get_template_directory_uri(); ?>/img/tyrael.jpg" alt="">
+								</span>
+							</div>
+							<div class="col-3 nopadding">
+								<span class="fancy fancybox" rel="group" data-fancybox-href="<?php echo get_template_directory_uri(); ?>/img/bim.jpg">
+									<img src="<?php echo get_template_directory_uri(); ?>/img/tyrael.jpg" alt="">
+								</span>
+							</div>
+							<div class="col-3 nopadding">
+								<span class="fancy fancybox" rel="group" data-fancybox-href="<?php echo get_template_directory_uri(); ?>/img/bim.jpg">
+									<img src="<?php echo get_template_directory_uri(); ?>/img/tyrael.jpg" alt="">
+								</span>
+							</div>
+							<div class="col-3 nopadding">
+								<span class="fancy fancybox" rel="group" data-fancybox-href="<?php echo get_template_directory_uri(); ?>/img/bim.jpg">
+									<img src="<?php echo get_template_directory_uri(); ?>/img/tyrael.jpg" alt="">
+								</span>
+							</div>
+							<div class="col-3 nopadding">
+								<span class="fancy fancybox" rel="group" data-fancybox-href="<?php echo get_template_directory_uri(); ?>/img/bim.jpg">
+									<img src="<?php echo get_template_directory_uri(); ?>/img/tyrael.jpg" alt="">
+								</span>
+							</div>
+							<div class="col-3 nopadding">
+								<span class="fancy fancybox" rel="group" data-fancybox-href="<?php echo get_template_directory_uri(); ?>/img/bim.jpg">
+									<img src="<?php echo get_template_directory_uri(); ?>/img/tyrael.jpg" alt="">
+								</span>
+							</div>
+							<div class="col-3 nopadding">
+								<span class="fancy fancybox" rel="group" data-fancybox-href="<?php echo get_template_directory_uri(); ?>/img/bim.jpg">
+									<img src="<?php echo get_template_directory_uri(); ?>/img/tyrael.jpg" alt="">
+								</span>
+							</div>
+							<div class="col-3 nopadding">
+								<span class="fancy fancybox" rel="group" data-fancybox-href="<?php echo get_template_directory_uri(); ?>/img/bim.jpg">
+									<img src="<?php echo get_template_directory_uri(); ?>/img/tyrael.jpg" alt="">
+								</span>
+							</div>
+							<div class="col-3 nopadding">
+								<span class="fancy fancybox" rel="group" data-fancybox-href="<?php echo get_template_directory_uri(); ?>/img/bim.jpg">
+									<img src="<?php echo get_template_directory_uri(); ?>/img/tyrael.jpg" alt="">
+								</span>
+							</div>
+							<div class="col-3 nopadding">
+								<span class="fancy fancybox" rel="group" data-fancybox-href="<?php echo get_template_directory_uri(); ?>/img/bim.jpg">
+									<img src="<?php echo get_template_directory_uri(); ?>/img/tyrael.jpg" alt="">
+								</span>
+							</div>
+						</div>
+					</div>
 				</section>
 				<section class="bee-content" id="price">
 					<h2>Bảng giá và liên hệ</h2>
@@ -101,9 +165,12 @@ Ngày nay, công nghệ càng phát triển, xã hội công nghiệp hóa, các
 			</nav>	
 		</div>
 		<div class="section-cover">
-			<span class="visual text-center vertical-center" id="logo-bee">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/bee_64.png" alt="Candy bee">
-			</span>
+			<div class="helper"></div>
+			<div class="cover">
+				<span class="visual text-center vertical-center" id="logo-bee">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/bee_64.png" alt="Candy bee">
+				</span>
+			</div>
 		</div>
 	</section>
 	<section class="second-half">
@@ -124,9 +191,12 @@ Ngày nay, công nghệ càng phát triển, xã hội công nghiệp hóa, các
 			</div>
 		</div>  
 		<div class="section-cover">
-			<span class="visual text-center vertical-center">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/honey_64.png" alt="Kien thuc mat ong">
-			</span>
+			<div class="cover">
+				<span class="visual text-center vertical-center">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/honey_64.png" alt="Kien thuc mat ong">
+				</span>
+			</div>
+			<div class="helper"></div>
 		</div>
 	</section>
 </div>

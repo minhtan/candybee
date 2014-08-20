@@ -21,6 +21,7 @@ if (!Array.prototype.map)
 
 var beeScroll;
 var postScroll;
+var slider;
 //script begin
 $(document).ready(function() {
 	//set document height to 100%
@@ -156,6 +157,31 @@ $(document).ready(function() {
 
 	});
 
+	//product images slider
+	function sliderConfig(){
+		if($(window).width() <= 768){
+			if(slider === undefined){
+				slider = $('.product-image').bxSlider();
+			}else{
+				slider.reloadSlider();
+			}
+			$('.fancy').removeClass("fancybox");
+		}else{
+			if(slider != undefined){
+				slider.destroySlider();
+		        $('.product-image').removeAttr('style');
+		        $('.product-image > .col-3').removeAttr('style');
+			}
+			$('.fancy').addClass("fancybox");
+		}
+	}
+	sliderConfig();
+
+	//fancy box init
+	$(".fancybox").fancybox({
+		href: $(this).attr('data-href')
+	});
+
 	//resize function
 	$(window).resize(function(){
 		winHeight = $(window).height();
@@ -165,6 +191,7 @@ $(document).ready(function() {
 	        beeScroll.refresh();
 	        postScroll.refresh();
 	        setActiveNav();
+	        sliderConfig();
 	    }, 400);
 	});
 });
