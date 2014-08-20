@@ -6,27 +6,22 @@
  */
 
 get_header(); ?>
+	<div class="primary-wrap">
+		<div id="primary" class="content-area row">
+			<main id="main" class="site-main col-9" role="main">
+			<?php while ( have_posts() ) : the_post(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-
-		<?php while ( have_posts() ) : the_post(); ?>
-
-			<?php get_template_part( 'content', 'single' ); ?>
-
-			<?php candybee_post_nav(); ?>
-
-			<?php
-				// If comments are open or we have at least one comment, load up the comment template
-				if ( comments_open() || '0' != get_comments_number() ) :
-					comments_template();
-				endif;
-			?>
-
-		<?php endwhile; // end of the loop. ?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-<?php get_sidebar(); ?>
+				<?php get_template_part( 'content', 'single' ); ?>
+				<?php candybee_post_nav(); ?>
+			<?php endwhile; // end of the loop. ?>
+			</main><!-- #main -->
+			<div class="sidebar col-3">
+				<div class="ads">		
+				</div>
+				<div class="related">
+					<?php get_sidebar(); ?>	
+				</div>
+			</div>	
+		</div><!-- #primary -->
+	</div>
 <?php get_footer(); ?>

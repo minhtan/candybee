@@ -58,15 +58,23 @@ function has_post_remain($total_post, $client_post, $sub_post){
 function create_post_html($result, $return_post){
 	$temp = "";
 	for ($i = 0; $i < count($result); $i++) {
+
 		if(check_has_gap($return_post, $i)){
-			$temp = $temp . "<li class='post text-center hex hex-gap' style='background-image:url(" .  wp_get_attachment_url( get_post_thumbnail_id($result[$i]->ID)) . ")'>";
+			$temp = $temp . "<li class ='post hex-gap'>";	
 		}else{
-			$temp = $temp . "<li class='post text-center hex' style='background-image:url(" .  wp_get_attachment_url( get_post_thumbnail_id($result[$i]->ID)) . ")'>";
+			$temp = $temp . "<li class ='post'>";
 		}
-		$temp = $temp . "<div class='corner-1'></div>";
-		$temp = $temp . "<div class='corner-2'></div>";
+		$temp = $temp . "<div class='hexagon hexagon2'>";
+		$temp = $temp . "<div class='hexagon-in1'>";
+		$temp = $temp . "<div class='hexagon-in2 img-loading'>";
+		$temp = $temp . "<a href='" . get_permalink($result[$i]->ID) . "'>";
+		$temp = $temp . "<img class='lazy' id='" . $result[$i]->ID . "' src='". wp_get_attachment_url( get_post_thumbnail_id($result[$i]->ID)) . "'/>";
 		$temp = $temp . "<div class='post-title-bg'>";
-		$temp = $temp . "<h3 class='post-title vertical-center'>" .  $result[$i]->post_title . "</h3>";
+		$temp = $temp . "<h3 class='post-title vertical-center text-center'>" . $result[$i]->post_title . "</h3>";
+		$temp = $temp . "</div>";
+		$temp = $temp . "</a>";
+		$temp = $temp . "</div>";
+		$temp = $temp . "</div>";
 		$temp = $temp . "</div>";
 		$temp = $temp . "</li>";
 	}

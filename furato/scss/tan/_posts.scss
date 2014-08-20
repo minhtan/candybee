@@ -1,7 +1,28 @@
 //second-half
-$hex-height : 120px;
-$hex-height-small : 60px;
+$hex-height : 150px;
+$margin-tb: 9px;
+$margin-rl: 3px; 
+$max-width-1900: 900px;
+$max-width-1200: 800px;
+$max-width-1024: 680px;
+$max-width-768: 600px;
+$max-width-640: 480px;
+$max-width-480: 300px;
+	
+@mixin size-post($max-width, $margin){
+	width: $max-width / 3 - $margin * 2;
+	height: ($max-width / 3 - $margin * 2) * 1.15;
+	@content;
+}
 
+@mixin size-gap($max-width, $margin){
+	margin-left: $max-width / 3 + $margin;
+	@content;
+}	
+@mixin margin-post($margin){
+	margin: $margin * 1.45 * -1 $margin;
+	@content;
+}
 .title-second{
 	font-family:UTM;
 }
@@ -18,18 +39,58 @@ $hex-height-small : 60px;
 	float: left;
 }
 .post{
-	@include box-sizing(border-box);
-	display: block;
-	padding: 0px;
+	position: relative;
+	display: inline-block;
+	@include min-screen(1200px){
+		@include margin-post($margin-rl * 6){
+			@include size-post($max-width-1900, $margin-rl * 6)
+		}
+	}
+	@include max-screen(1200px){
+		@include margin-post($margin-rl * 5){
+			@include size-post($max-width-1200, $margin-rl * 5)
+		}
+	}
+	@include max-screen(1024px){
+		@include margin-post($margin-rl * 4.5){
+			@include size-post($max-width-1024, $margin-rl * 4.5)
+		}
+	}
+	@include max-screen(768px){
+		@include margin-post($margin-rl * 4){
+			@include size-post($max-width-768, $margin-rl * 4)
+		}
+	}
+	@include max-screen(640px){
+		@include margin-post($margin-rl * 3){
+			@include size-post($max-width-640, $margin-rl * 3)
+		}
+	}
+	@include phone(){
+		@include margin-post($margin-rl * 2){
+			@include size-post($max-width-480, $margin-rl * 2)	
+		}
+	}
 }
 .post-title{
 	z-index: 9999;
 	margin: 0;
 	padding: 0 5px;
+	background-color: rgba(0,0,0,0.4);
+	height:100px;
+	// background-image:url(../img/bg-title.png);
 	font-size: 19px;
+	@include max-screen(768px){
+		font-size: 16px;
+		padding:0 4px;
+	}
+	@include max-screen(640px){
+		font-size: 14px;
+		padding:0 3.5px;
+	}
 	@include max-screen(480px){
 		font-size: 11px;
-		padding: 0 2px;
+		padding: 0 3px;
 	}
 
 }
@@ -43,130 +104,226 @@ $hex-height-small : 60px;
 	float: left;
 }
 .post-list{
-	width: 678px;
 	margin: 0 auto;
 	padding-top: 50px;
+	@include min-screen(1200px){
+		width: $max-width-1900;
+	}
 	@include max-screen(1200px){
-		width: 678px;
+		width: $max-width-1200;
+	}
+	@include max-screen(1024px){
+		width: $max-width-1024;
 	}
 	@include max-screen(768px){
-		width: 480px;
+		width: $max-width-768;
 	}
-	@include max-screen(480px){
-		width: 300px;
+	@include max-screen(640px){
+		width: $max-width-640;
 	}
-
+	@include phone(){
+		width: $max-width-480;
+	}
 }
 .post-title-bg{
-	width: auto;
-	height: $hex-height;
-	@include max-screen(768px){
-		height: $hex-height / 1.4154;
-	}
-	@include max-screen(480px){
-		height: $hex-height / 2.3106;
-	}
-}
-
-// begin hex
-.hex {
-    width: $hex-height * 1.73333;
-    height: $hex-height;
-    background-color: #ccc;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;            
-    background-size: auto $hex-height * 2;                            
-    position: relative;
-    float:left;
-    margin:37px 9px;
-    text-align:center;
-    zoom:1;
-    @include max-screen(768px){
-    	width: $hex-height / 1.4154 * 1.73333;
-    	height: $hex-height / 1.4154;
-    	background-size: auto $hex-height / 1.4154 * 2;
-    	margin:28px 6px;
-    }
-    @include max-screen(480px){
-    	width: $hex-height / 2.3106 * 1.73333;
-    	height: $hex-height / 2.3106;
-    	background-size: auto $hex-height / 2.3106 * 2;
-    	margin:17px 4px;
-    }
-}
-.hex .corner-1,
-.hex .corner-2 {
-    position: absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background: inherit;                                
-    z-index:-2;                        
-    overflow:hidden;        
-    backface-visibility: hidden;          
-}
-
-.hex .corner-1 {
-    z-index:-1;
-    transform: rotate(60deg);
-}
-
-.hex .corner-2 {
-    transform: rotate(-60deg);
-}
-
-.hex .corner-1:before,
-.hex .corner-2:before {
-    width: $hex-height * 2;
-    height:    $hex-height * 2;
-	content: '';
 	position: absolute;
-	background: inherit;
 	top:0;
-	left: 0;
-	z-index: 1;
-	background: inherit;
-	background-repeat:no-repeat;
-	backface-visibility: hidden;  
+	@include min-screen(1200px){
+		@include size-post($max-width-1900,$margin-rl * 6)
+	}
+	@include max-screen(1200px){
+		@include size-post($max-width-1200,$margin-rl * 5)
+	}
+	@include max-screen(1024px){
+		@include size-post($max-width-1024,$margin-rl * 4.4)
+	}
 	@include max-screen(768px){
-		width: $hex-height / 1.4154 * 2;
-		height: $hex-height / 1.4154 * 2;
-	}     
-	@include max-screen(480px){
-		width: $hex-height / 2.3106 * 2;
-		height: $hex-height / 2.3106 * 2;
-	}         
-}            
-
-.hex .corner-1:before {
-	transform: rotate(-60deg) translate($hex-height * -0.99, 0px);    
-	transform-origin: 0 0;
-	@include max-screen(768px){
-		transform: rotate(-60deg) translate(-85.1px, 0px);    
+		@include size-post($max-width-768,$margin-rl * 4)
 	}
-	@include max-screen(480px){
-		transform: rotate(-60deg) translate(-52.3px, 1.6px); 
+	@include max-screen(640px){
+		@include size-post($max-width-640,$margin-rl * 3)
 	}
-}            
-
-.hex .corner-2:before {
-    transform: rotate(60deg) translate(-59px, -16px);    
-    bottom:0;
-    @include max-screen(768px){
-    	transform: rotate(60deg) translate(-43px, -11.6px); 
-    }
-    @include max-screen(480px){
-		transform: rotate(60deg) translate(-24.3px, -5.4px); 
+	@include phone(){
+		@include size-post($max-width-480,$margin-rl * 2)
 	}
-}        
-
+}    
+.img-default{
+	background-image:url(../img/bee_64.png);
+	background-color: $color3;
+}
+.img-loading{
+	background-color: $color3;
+	background-image:url(../img/loading.gif);
+	img{
+		opacity: 0;
+	}
+}
 .hex-gap {
-    margin-left: $hex-height;
+    @include min-screen(1200px){
+    	@include size-gap($max-width-1900 / 2, $margin-rl * 6)
+    }
+    @include max-screen(1200px){
+    	@include size-gap($max-width-1200 / 2, $margin-rl * 5)
+    }
+    @include max-screen(1024px){
+    	@include size-gap($max-width-1024 / 2, $margin-rl * 4.5)
+    }
     @include max-screen(768px){
-    	margin-left: $hex-height / 1.4154;
+    	@include size-gap($max-width-768 / 2, $margin-rl * 4)
     }
-    @include max-screen(480px){
-    	margin-left: $hex-height / 2.3106;
+    @include max-screen(640px){
+    	@include size-gap($max-width-640 / 2, $margin-rl * 3)
     }
+	@include phone(){
+		@include size-gap($max-width-480 / 2, $margin-rl * 2)
+	}
+}
+
+.hexagon2 {
+	position: absolute;
+	@include min-screen(1200px){
+		@include size-post($max-width-1900,$margin-rl * 6)
+	}
+	@include max-screen(1200px){
+		@include size-post($max-width-1200,$margin-rl * 5)
+	}
+	@include max-screen(1024px){
+		@include size-post($max-width-1024,$margin-rl * 4.5)
+	}
+	@include max-screen(768px){
+		@include size-post($max-width-768,$margin-rl * 4)
+	}
+	@include max-screen(640px){
+		@include size-post($max-width-640,$margin-rl * 3)
+	}
+	@include phone(){
+		@include size-post($max-width-480,$margin-rl * 2)
+	}
+}
+
+.hexagon {
+	overflow: hidden;
+	visibility: hidden;
+	cursor: pointer;
+	@include transform(rotate(120deg))
+	
+}
+
+.hexagon-in1 {
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	@include transform(rotate(-60deg))
+}
+
+.hexagon-in2 {
+	overflow: hidden;
+	@include box-sizing(border-box);
+	display: block;
+	padding: 0px;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-position: 50%;
+	visibility: visible;
+	position: relative;
+	@include transform(rotate(-60deg))
+}
+
+//trang single
+body.single-post{
+	height: 600px;
+}
+#header{
+	.logo-header{
+		h1{
+			margin: 0;
+		}
+		.slogan{
+			color: $color3;
+			vertical-align: bottom;
+			line-height: 52px;
+			font-family: "UTM";
+		}
+	}
+	.social-link{
+		ul{
+			margin: 0;
+			float: right;
+			li{
+				float: left;
+				display: block;
+				width: 64px;
+				height: 64px;
+				margin-left: 5px;
+				a{
+					display: block;
+					width: 100%;
+					height: 50%;
+					text-indent: -9999px;
+					@include transition-duration(0.2s);
+					margin-top: 32px;
+					&.fb{
+						background: url(../img/icons/facebook_64.png) no-repeat;
+					}
+					&.tw{
+						background: url(../img/icons/twitter_64.png) no-repeat;
+					}
+					&.gg{
+						background: url(../img/icons/google+_64.png) no-repeat;
+					}
+					&.yt{
+						background: url(../img/icons/youtube_64.png) no-repeat;
+					}
+					&:hover{
+						margin-top: 0;
+						height: 100%;
+					}
+				}
+			}
+		}
+	}
+}
+#primary{
+	width: 80%; 
+	margin: 50px auto;
+	@include max-screen(480px){
+		width: 100%;
+	}
+	#main{
+		article{
+			width: auto;
+			height: auto;
+			header{
+				.entry-title{
+					color: black;
+				}
+			}
+			.entry-content{
+				p{
+					color: black;
+				}
+			}
+		}
+	}
+	.sidebar{
+		.ads{
+			height: 100px;
+			background-color: $color1;
+		}
+		.related{
+			#yarpp_widget-2{
+				h1{
+					color: $color3;
+				}
+				.yarpp-related-widget{
+					p{
+						em{
+							color: $color3;
+						}
+					}
+				}
+			}
+		}
+	}
 }

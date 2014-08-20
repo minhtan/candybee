@@ -185,9 +185,6 @@ Ngày nay, công nghệ càng phát triển, xã hội công nghiệp hóa, các
 						<span class="view-more">View more</span>
 					</div>
 				</div>
-				<div class="post-detail">
-					<!-- detail goes here -->
-				</div>
 			</div>
 		</div>  
 		<div class="section-cover">
