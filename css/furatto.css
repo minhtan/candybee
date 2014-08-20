@@ -3716,15 +3716,6 @@ body {
   line-height: 64px;
 }
 
-.admin-bar .bee-control {
-  top: 32px;
-}
-@media only screen and (max-width: 768px) {
-  .admin-bar .bee-control {
-    top: 46px;
-  }
-}
-
 #benefit, #media, #price, #faq {
   min-height: 990px;
   border-bottom: solid 1px #ecf0f1;
