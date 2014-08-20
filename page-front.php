@@ -101,9 +101,9 @@ Ngày nay, công nghệ càng phát triển, xã hội công nghiệp hóa, các
 			</nav>	
 		</div>
 		<div class="section-cover">
-			<span class="visual text-center vertical-center" id="logo-bee">
+			<a href="<?php echo home_url();  ?>" class="visual text-center vertical-center" id="logo-bee">
 				<img src="<?php echo get_template_directory_uri(); ?>/img/bee_64.png" alt="Candy bee">
-			</span>
+			</a>
 		</div>
 	</section>
 	<section class="second-half">
@@ -117,9 +117,6 @@ Ngày nay, công nghệ càng phát triển, xã hội công nghiệp hóa, các
 					<div class="text-center view-more-wrap">
 						<span class="view-more">View more</span>
 					</div>
-				</div>
-				<div class="post-detail">
-					<!-- detail goes here -->
 				</div>
 			</div>
 		</div>  

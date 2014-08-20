@@ -8,9 +8,9 @@
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
-		<div class="entry-meta">
-			<?php candybee_posted_on(); ?>
-		</div><!-- .entry-meta -->
+<!-- 		<div class="entry-meta">
+			<?php candybee_posted_on(); ?> -->
+		<!-- </div> --><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
@@ -48,15 +48,7 @@
 				}
 
 			} // end check for categories on this blog
-
-			printf(
-				$meta_text,
-				$category_list,
-				$tag_list,
-				get_permalink()
-			);
 		?>
 
-		<?php edit_post_link( __( 'Edit', 'candybee' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

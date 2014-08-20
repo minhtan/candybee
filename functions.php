@@ -107,7 +107,7 @@ function candybee_scripts() {
 	// wp_enqueue_script( 'furatto-script', get_template_directory_uri() . '/js/furatto.min.js', array(), '1.0', true );
 
 	wp_enqueue_script( 'iscroll-script', get_template_directory_uri() . '/js/iscroll.js', array(), '5.0', true );
-
+	
 	// wp_enqueue_script( 'jquery-touch-punch-script', get_template_directory_uri() . '/js/jquery.ui.touch-punch.min.js', array(), '1.0', true );
 
 	wp_enqueue_script( 'candy-front-script', get_template_directory_uri() . '/js/tan.js', array(), '1.0', true );
