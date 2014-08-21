@@ -22,7 +22,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-	<?php if( is_home() || is_front_page() ) : ?>
+	<?php if( is_front_page() ) : ?>
 
 	<?php else : ?>
 		<header id="header" class="row">
