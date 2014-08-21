@@ -8,10 +8,6 @@ get_header(); ?>
 		<div class="section-content" id="candybee-content">
 			<div class="bee-content-wrap">
 				<section class="bee-content" id="info">
-					<h1 class="text-center" id="logo-bee">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/logobee_64.png" alt="Candy Bee">
-						<span class="logo-info"> - mật ong chất</span>
-					</h1>
 					<p class="text-center" id="info-intro">Từ ngày xưa mật ong đã được sử dụng như một thực phẩm để bồi bổ sức khỏe, có mặt trong các vị thuốc và là một phương thức làm đẹp cho chị em phụ nữ.
 Ngày nay, công nghệ càng phát triển, xã hội công nghiệp hóa, các sản phẩm từ tự nhiên đã dần mất đi bản chất vốn có của nó. Nhận thức được điều trên, Candybee đã ra đời với mong muốn mang đến cho người tiêu dùng các sản phẩm từ ong tự nhiên, nguyên chất, đảm bảo về chất lượng và ít có sự can thiệp của con người nhất.
 </p>
@@ -159,9 +155,12 @@ Ngày nay, công nghệ càng phát triển, xã hội công nghiệp hóa, các
 					<li class="price" nav="price"><span>Bảng giá và liên hệ</span></li>
 					<li class="faq" nav="faq"><span>FAQ</span></li>
 				</ul>
-				<span class="hot-line">
+				<!-- <span class="hot-line">
 					Hotline: 0123456789
-				</span>
+				</span> -->
+				<h1 class="text-right logo">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/logobee_64.png" alt="Candy Bee">
+				</h1>
 			</nav>	
 		</div>
 		<div class="section-cover">

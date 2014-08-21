@@ -3294,7 +3294,7 @@ a.addon:hover {
 }
 
 body {
-  color: #ecf0f1;
+  color: #3b2313;
 }
 
 *:focus {
@@ -3680,9 +3680,13 @@ body {
   }
 }
 
+.bee-control {
+  background: #ecf0f1;
+}
 .bee-control ul {
   margin: 0;
   padding: 0;
+  float: right;
 }
 .bee-control .hot-line {
   float: right;
@@ -3714,6 +3718,11 @@ body {
   outline-color: transparent;
   cursor: pointer;
   line-height: 64px;
+  color: #3b2313;
+}
+.bee-control .logo {
+  float: left;
+  margin: 0;
 }
 
 #benefit, #media, #price, #faq {
