@@ -1,9 +1,11 @@
 <?php
 function useAjax() {
- 
-	/** Register JavaScript Functions File */
-	 wp_register_script( 'ajax-function', esc_url( trailingslashit( get_template_directory_uri() ) . '/js/ajax.js' ), array(), '1.0', true );
-	 
+ 	
+ 	if( is_front_page() ){
+		/** Register JavaScript Functions File */
+		 wp_register_script( 'ajax-function', esc_url( trailingslashit( get_template_directory_uri() ) . '/js/ajax.js' ), array(), '1.0', true );
+	}
+	
 	/** Localize Scripts */
 	 wp_localize_script( 'ajax-function', 'ajax', array( 'url' => admin_url( 'admin-ajax.php' ) ) );
 	/** Enqueue JavaScript Functions File */

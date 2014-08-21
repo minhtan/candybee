@@ -158,9 +158,8 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
-if( is_front_page() ){
-	$dirName = dirname(__FILE__);
-	$baseName = basename(realpath($dirName));
-	require_once ("$dirName/ajax-function.php");
-}
+$dirName = dirname(__FILE__);
+$baseName = basename(realpath($dirName));
+require_once ("$dirName/ajax-function.php");
+
 	
