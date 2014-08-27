@@ -22,6 +22,7 @@ if (!Array.prototype.map)
 var beeScroll;
 var postScroll;
 var slider;
+var scrollLock = false;
 //script begin
 $(document).ready(function() {
 	//set document height to 100%
@@ -37,7 +38,10 @@ $(document).ready(function() {
 		var height = winHeight - adminbar;
 		
 		$('.candyfront').height(height);
-		$('.bee-content-wrap section:last-child').css('min-height', height);
+		if( $(window).width() > 960)
+			$('.bee-content-wrap section:last-child').css('min-height', height-64);
+		else
+			$('.bee-content-wrap section:last-child').css('min-height', height);
 	}
 
 	//toggle section
@@ -55,7 +59,7 @@ $(document).ready(function() {
 
 	//toggle section content
 	function toggleSectionContent(current, other){
-		if( $(current).hasClass("open") ){}else{
+		if( ! $(current).hasClass("open") ){
 			if($(other).hasClass("open")){
 				$(other).find('.section-cover').removeClass("open");
 				$(other).find('.section-content').removeClass("open");
@@ -72,12 +76,9 @@ $(document).ready(function() {
 	setHeight();
 
 	// prevent default touch on mobile and tablet
-	$(document).bind(
-		'touchmove',
-		function(e) {
-			e.preventDefault();
-		}
-	);
+	$(document).bind('touchmove', function(e){
+		e.preventDefault();
+	});
 
 	//init IScroll for bee content
 	beeScroll = new IScroll('#candybee-content', {
@@ -87,7 +88,8 @@ $(document).ready(function() {
 		interactiveScrollbars: true,
 		shrinkScrollbars: 'clip',
 		useTransition: false,
-		click: true
+		click: true,
+		probeType: 3
 	});
 
 	//init scroll for post content
@@ -129,14 +131,29 @@ $(document).ready(function() {
 			}
 		}
 	}
-	beeScroll.on('scrollEnd', function(){
+	beeScroll.on('scroll', function(){
+		scrollLock = true;
 		setActiveNav();
 	});
 
 	//scroll navigation
+	beeScroll.on('scrollEnd', function(){
+		scrollLock = false;
+	});
+	beeScroll.on('scrollCancel', function(){
+		scrollLock = false;
+	});
 	$('.bee-control li').click(function(){
-		var el = '#' + $(this).attr('nav');
-		beeScroll.scrollToElement(el, 1000);
+		if( scrollLock === false ){
+			var offsetY;
+			if( $(window).width() > 960 )
+				offsetY = -64;
+			else
+				offsetY = 0;
+			var el = '#' + $(this).attr('nav');
+			beeScroll.scrollToElement(el, 600, 0, offsetY);
+			closeMobMenu();
+		}
 	});
 
 	//toggle sections
@@ -150,11 +167,14 @@ $(document).ready(function() {
 	});
 	$('.second-half').click(function(){
 		toggleSectionContent(".second-half", ".first-half");
+		closeMobMenu();
 		setTimeout(function () {
 	        beeScroll.scrollTo(0,0);
 	        postScroll.refresh();
 	    }, 800);
-
+	});
+	$('#go-to-2nd-half').click(function(){
+		$('.second-half').click();
 	});
 
 	//product images slider
@@ -175,23 +195,50 @@ $(document).ready(function() {
 			$('.fancy').addClass("fancybox");
 		}
 	}
-	sliderConfig();
+	// sliderConfig();
 
 	//fancy box init
 	$(".fancybox").fancybox({
-		href: $(this).attr('data-href')
+		padding: 0,
+		aspectRatio: true,
+		margin: 0
 	});
+	// $(".img-zoom").click(function(){
+	// 	$(this).parent().parent().parent().find('.fancybox').click();
+	// });
+
+	//mobile navigation
+	function closeMobMenu(){
+		if( $('.bee-control').hasClass('toggled') ){
+			$('.bee-control').removeClass('toggled');
+		}
+	}
+	$('.mobile-button').click(function(){
+		if( ! $('.bee-control').hasClass('toggled') ){
+			$('.bee-control').addClass('toggled');
+		}
+	});
+	function smallHeightDeviceNav(){
+		if( $(window).height() < 400 ){
+			$('.bee-control').addClass('small');
+		}else{
+			$('.bee-control').removeClass('small');
+		}
+	}
+	smallHeightDeviceNav();
 
 	//resize function
 	$(window).resize(function(){
 		winHeight = $(window).height();
+		closeMobMenu();
+		smallHeightDeviceNav();
 		setHeight();
 		calNavHeight();
 		setTimeout(function () {
 	        beeScroll.refresh();
 	        postScroll.refresh();
 	        setActiveNav();
-	        sliderConfig();
+	        // sliderConfig();
 	    }, 400);
 	});
 });

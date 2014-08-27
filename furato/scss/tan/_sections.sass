@@ -1,10 +1,26 @@
 //-----------------------------------------------------------------------------
 //------------------------------------FIRST HALF-------------------------------
 //-----------------------------------------------------------------------------
+@mixin border-bottom
+	border-bottom: solid 1px rgba(255,255,255,0.5)
+@mixin border-top
+	border-top: solid 1px rgba(255,255,255,0.5)
 
 //navigation
 .bee-control
 	background: $color4
+	position: fixed
+	z-index: 9999999
+	top: 0
+	left: 8%
+	margin: 0
+	padding: 0
+	width: 92.1%
+	+transform(translateX(-100%))
+	+transition-duration(0.4s)
+	+transition-timing-function(ease-out)
+	&.open
+		+transform(translateX(0))
 	ul
 		margin: 0
 		padding: 0
@@ -16,11 +32,23 @@
 		display: block
 		float: left
 		height: 64px
-		opacity: 0.7
 		+transition-duration(0.2s)
 		+transition-timing-function(ease-out)
+		&.close
+			display: none
 		&.active
-			opacity: 1
+			span
+				color: $color4
+			&.info
+				background: $color1
+			&.benefit
+				background: $color3
+			&.media
+				background: $color6
+			&.price
+				background: $color7
+			&.faq
+				background: $color8
 	li > span
 		display: block
 		margin: 0
@@ -31,43 +59,317 @@
 		cursor: pointer
 		line-height: 64px
 		color: $color5
+	&.small
+		li
+			height: 40px
+			span
+				line-height: 40px
 	.logo
 		float: left
 		margin: 0
-// .admin-bar .bee-control
-// 	top: 32px
-// 	+max-screen($grid-max-width)
-// 		top: 46px
+		padding-left: 15px
+		height: 64px
+		img
+			height: 100%
+	+media-portrait($grid-max-width)
+		left: 0
+		width: 100%
+	+max-screen($mobile-nav-trigger-width)
+		height: 100%
+		width: auto
+		position: absolute
+		+transform(translateX(-100%) !important)
+		&.toggled
+			+transform(translateX(0) !important)
+		.logo
+			display: none
+		ul
+			width: 100%
+			height: 100%
+			li
+				float: none
+				&.close
+					display: block
+.mobile-button
+	display: none
+	position: fixed
+	z-index: 999999
+	cursor: pointer
+	top: 0
+	left: 8%
+	width: 64px
+	height: 64px
+	background: url(../img/icons/rods_64.png) center no-repeat
+	+media-portrait($grid-max-width)
+		left: 0
+.first-half.open
+	+max-screen($mobile-nav-trigger-width)
+		.mobile-button
+			display: block
 
+.bee-content
+	h2
+		font-family: UTM
+		margin: 0
+		padding: 35px 15px
+		font-size: 36px
+		+max-screen($grid-max-width)
+			text-align: center
 //#info
-#benefit, #media, #price, #faq
-	min-height: 990px
-	border-bottom: solid 1px $color4
+#info
+	padding-top: 64px
+	+max-screen($mobile-nav-trigger-width)
+		padding-top: 0
+		h2
+			padding-top: 55px
+	#info-intro
+		font-size: 20px
+		display: block
+		padding-right: 25%
+		padding-left: 15px
+		+box-sizing(border-box)
+		margin-bottom: 0
+		+max-screen($mobile-nav-trigger-width)
+			text-align: right
+			padding-left: 25%
+			padding-right: 15px
+		+max-screen($grid-max-width)
+			text-align: center
+			padding: 0 15px
+	.row
+		article
+			padding: 45px 15px
+			margin-bottom: 0
+			+max-screen($grid-max-width)
+				padding-bottom: 0
+				&:last-child
+					padding-bottom: 45px
+					p
+						padding-bottom: 0
+						border-bottom: none
+			p
+				margin: 40px auto 0
+				max-width: 390px
+				+max-screen($grid-max-width)
+					max-width: 65%
+					padding-bottom: 45px
+					+border-bottom
 
 //#benefit
+#benefit
+	background: $color3
+	padding-bottom: 25px
 .benefit-content
-	li
-		display: block
 	article
-		padding: 0 15px
+		padding: 0 15px 45px
+		+max-screen($grid-max-width)
+			padding: 0 15px 20px !important
 		.img-wrap
 			display: inline-block
-		p
-			display: inline-block
-			margin-bottom: 0
-			text-align: left
+			padding-right: 10px
+			+max-screen($grid-max-width)
+				padding-right: 0px
+		h3
+			font-family: $san-pro
+			font-size: 32px
+			+max-screen($grid-max-width)
+				margin: 0
+		.text
+			text-align: right
+			padding-right: 0
+			p
+				margin-bottom: 0
+			+max-screen($grid-max-width)
+				text-align: center
+				padding: 0 17.5% !important
+				p
+					padding-bottom: 35px
+					+border-bottom
+	.benefit-text
+		+max-screen($grid-max-width)
+			padding: 0 17.5%
+		+max-screen(660px)
+			padding: 0 21.5%
 	.benefit-read-more
 		display: inline-block
-		line-height: 24px
+		line-height: 32px
 		vertical-align: top
 	#go-to-2nd-half
 		margin-left: 10px
 		display: inline-block
 		width: 32px
-		height: 20px
-		background: url(../img/icons/arrow_right_32.png) no-repeat center
+		height: 32px
+		cursor: pointer
+		background: url(../img/icons/arrow_right_32_2.png) no-repeat center
+		+media-portrait($grid-max-width)
+			background: url(../img/icons/arrow_down_32_2.png) no-repeat center
 
 //images
+#media
+	background: $color6
 .product-image
-	.fancy
-		cursor: pointer
+	.half-item
+		display: inline-block
+		vertical-align: top
+		width: 50%
+		a
+			color: $color4
+		+max-screen($medium-screen)
+			width: 100%
+	.full-item
+		display: inline-block
+		vertical-align: top
+		width: 100%
+		a
+			color: $color6
+		.img-zoom
+			color: $color6
+			border-color: $color6 !important
+		.item-img
+			+max-screen($medium-screen)
+				width: 100%
+		.item-text
+			padding-bottom: 37.5%
+			background: $color4
+			+max-screen($medium-screen)
+				width: 100%
+				padding-bottom: 30%
+			h3
+				color: $color6
+				font-size: 42px
+				line-height: 52px
+				+max-screen(740px)
+					font-size: 24px
+					line-height: 30px
+				+max-screen(540px)
+					font-size: 18px
+					line-height: 22px
+				+max-screen(400px)
+					font-size: 16px
+					line-height: 20px
+	.item-img
+		overflow: hidden
+		width: 50%
+		float: left
+		+max-screen($medium-screen)
+			&.right
+				float: right
+		img
+			display: block
+			max-width: none
+			width: 100%
+	.item-img-full
+		@extend .item-img
+		width: 100%
+	.item-text
+		overflow: hidden
+		width: 50%
+		position: relative
+		padding-bottom: 50%
+	.item-text-content
+		position: absolute
+		padding: 24px
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		+max-screen(400px)
+			padding: 12px
+		h3
+			font-size: 24px
+			line-height: 30px
+			margin: -5px 0 0 0
+			+screen($medium-screen, $large-screen)
+				font-size: 18px
+				line-height: 26px
+			+max-screen(540px)
+				font-size: 18px
+				line-height: 24px
+			+max-screen(440px)
+				font-size: 16px
+				line-height: 20px
+			+max-screen(400px)
+				font-size: 14px
+				line-height: 18px
+		.img-zoom
+			position: absolute
+			bottom: 24px
+			left: 24px
+			padding-right: 24px
+			line-height: 16px
+			background: url(../img/icons/zoom_32.png) no-repeat right top
+			background-size: 16px
+			cursor: pointer
+			padding-bottom: 8px
+			+border-bottom
+			+max-screen(400px)
+				font-size: 14px
+				bottom: 12px
+				left: 12px
+
+//price
+#price
+	background: $color7
+	.row
+		padding-bottom: 45px
+		h3
+			font-family: $san-pro
+			font-size: 32px
+			text-align: center
+			margin-top: 0
+		ul
+			list-style: none
+			margin: 0
+			li > span
+				line-height: 64px
+	.pricing
+		max-width: 645px
+		margin: 0 auto !important
+		li
+			+box-sizing(border-box)
+			margin: 0 15px
+			+border-bottom
+			&:first-child
+				+border-top
+		.product, .price
+			font-size: 20px
+			display: block
+		.product
+			float: left
+		.price
+			float: right
+	.contact-wrap
+		+max-screen($grid-max-width)
+			padding-top: 40px
+	.contact
+		max-width: 330px
+		margin: 0 auto !important
+		.contact-li
+			font-size: 20px
+			.contact-label
+				min-width: 100px
+				display: inline-block
+			.social-ul
+				display: inline-block
+				vertical-align: top
+				padding-top: 20px
+				li
+					display: inline-block
+					width: 64px
+					height: 64px
+					a
+						color: transparent
+						display: block
+						width: 100%
+						height: 100%
+					&.fb
+						background: url(../img/icons/newSocial/fb.png) no-repeat center
+					&.in
+						background: url(../img/icons/newSocial/in.png) no-repeat center
+					&.yt
+						background: url(../img/icons/newSocial/yt.png) no-repeat center
+					&.gg
+						background: url(../img/icons/newSocial/gg.png) no-repeat center
+//faq
+#faq
+	background: $color8

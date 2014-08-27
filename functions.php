@@ -122,7 +122,7 @@ function candybee_scripts() {
 
 	// wp_enqueue_script( 'furatto-script', get_template_directory_uri() . '/js/furatto.min.js', array(), '1.0', true );
 
-	wp_enqueue_script( 'iscroll-script', get_template_directory_uri() . '/js/iscroll.js', array(), '5.0', true );
+	wp_enqueue_script( 'iscroll-script', get_template_directory_uri() . '/js/iscroll-probe.js', array(), '5.0', true );
 
 	if( is_front_page() ){
 		wp_enqueue_script( 'candy-front-script', get_template_directory_uri() . '/js/tan.js', array(), '1.0', true );

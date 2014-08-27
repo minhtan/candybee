@@ -6,9 +6,12 @@
 .vertical-center
 	+vertical-center
 
+//section var
+
+
 //style
 body
-	color: $color5
+	color: $color4
 *:focus
 	outline: 0
 .candyfront
@@ -25,6 +28,8 @@ body
 	+box-sizing(border-box)
 	+transition-duration(0.4s)
 	+transition-timing-function(ease-out)
+	+media-portrait($grid-max-width)
+		height: 91%
 	.section-cover
 		height: 100%
 		width: 100%
@@ -39,7 +44,7 @@ body
 			+transition-duration(0.4s)
 			+transition-timing-function(ease-out)
 			+media-portrait($grid-max-width)
-				height: 50%
+				height: 45%
 				width: 100%
 		.cover
 			height: 100%
@@ -48,7 +53,7 @@ body
 			+transition-duration(0.4s)
 			+transition-timing-function(ease-out)
 			+media-portrait($grid-max-width)
-				height: 50%
+				height: 55%
 				width: 100%
 	.section-content
 		width: 100%
@@ -108,37 +113,22 @@ body
 		.cover
 			float: right
 	.bee-content
-		padding-top: 64px
-	.bee-control
-		position: fixed
-		top: 0
-		left: 8%
-		margin: 0
-		padding: 0
-		width: 92%
-		+transform(translateX(-100%))
-		+transition-duration(0.4s)
-		+transition-timing-function(ease-out)
+		+max-screen($mobile-nav-trigger-width)
+			padding-top: 0
 	+media-portrait($grid-max-width)
-		+transform(translate(0, -50%))
+		+transform(translate(0, -45%))
 		.section-content
 			padding-left: 0
-		.bee-control
-			top: 10%
-			left: 0
-			width: 100%
 
 //first half open
 .first-half.open
 	+transform(translateX(-8%))
-	.bee-control.open
-		+transform(translateX(0))
 	.section-cover.open
 		+transform(translateX(100%))
 	.section-content.open
 		+transform(translateX(0))
 	+media-portrait($grid-max-width)
-		+transform(translate(0, -10%))
+		+transform(translate(0, 0%))
 		
 //first half closed
 .first-half.closed
@@ -150,9 +140,6 @@ body
 .bee-content-wrap
 	margin: 0
 	+box-sizing(border-box)
-	#info-intro
-		font-size: 20px
-		padding: 15px
 
 //-----------------------------------------------------------------------------
 //------------------------------------SECOND HALF------------------------------
@@ -177,7 +164,7 @@ body
 		.cover
 			float: left
 	+media-portrait($grid-max-width)
-		+transform(translate(0, 50%))
+		+transform(translate(0, 55%))
 		.section-content
 			padding-right: 0
 
@@ -195,4 +182,4 @@ body
 .second-half.closed
 	+transform(translateX(92%))
 	+media-portrait($grid-max-width)
-		+transform(translate(0, 90%))
+		+transform(translate(0, 100%))
