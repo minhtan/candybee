@@ -8,7 +8,8 @@ $max-width-1024: 680px;
 $max-width-768: 600px;
 $max-width-640: 480px;
 $max-width-480: 300px;
-	
+$colorTitle: red;	
+
 @mixin size-post($max-width, $margin){
 	width: $max-width / 3 - $margin * 2;
 	height: ($max-width / 3 - $margin * 2) * 1.15;
@@ -228,6 +229,67 @@ $max-width-480: 300px;
 	visibility: visible;
 	position: relative;
 	@include transform(rotate(-60deg))
+}
+// trang listing
+.primary-swap{
+	width: 100%;
+	margin: 0 auto;
+	max-width: 960px;
+}
+.sidebar-cat{
+	background-color: red;
+	height: 500px;
+	margin-top: 40px; 
+}
+.post-cat{
+	list-style-type: none;
+	height:auto;
+	margin-left: 0;
+}
+.post2-listing{
+	height:200px;
+}
+.title-post-cat{
+	font-size: 24px;
+	margin-bottom: 5px;
+	a{
+		text-decoration: none;
+		&:hover{
+			color: $colorTitle;
+		}
+	}
+
+}
+
+.screen-reader-text{
+	display: none;
+}
+.nav-previous{
+	width: auto;
+	float: left;
+}
+.nav-next{
+	width: auto;
+	float: right;
+}
+
+.size-img{
+	margin-top: 20px;
+}
+.hexagon2-mini {
+	position: absolute;
+	@include max-screen(1900px){
+		@include size-post(550px, $margin-rl * 5)
+	}
+	@include max-screen(768px){
+		@include size-post(400px, $margin-rl * 4)
+	}
+	@include max-screen(640px){
+		@include size-post($max-width-640, $margin-rl * 3)
+	}
+	@include phone(){
+		@include size-post($max-width-480, $margin-rl * 2)
+	}
 }
 
 //trang single
