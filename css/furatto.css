@@ -4606,7 +4606,17 @@ body {
 .primary-swap {
   width: 100%;
   margin: 0 auto;
-  max-width: 960px;
+  max-width: 1024px;
+  background-color: #EEEEEE;
+}
+
+.size-img {
+  position: relative;
+  display: block;
+  height: auto;
+}
+.size-img a img {
+  height: auto;
 }
 
 .sidebar-cat {
@@ -4623,21 +4633,54 @@ body {
 
 .listing-cat {
   display: block;
-  height: 200px;
-  border-top: 2px solid #E6E6FA;
+  height: auto;
+  min-height: 220px;
+  border-top: 3px solid #E6E6FA;
+  border-bottom: 3px solid #E6E6FA;
   position: relative;
 }
+@media only screen and (max-width: 1024px) {
+  .listing-cat {
+    margin-left: 15px;
+  }
+}
+.listing-cat .next-view {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  text-decoration: none;
+}
+.listing-cat .next-view:hover {
+  color: #c21053;
+}
 
-.title-post-cat {
+.text {
+  height: auto;
+}
+.text .title-post-cat {
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 24px;
   margin-bottom: 5px;
 }
-.title-post-cat a {
+.text .title-post-cat a {
   text-decoration: none;
   font-weight: 900;
 }
-.title-post-cat a:hover {
+.text .title-post-cat a:hover {
   color: red;
+}
+.text p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  color: black;
+}
+@media only screen and (max-width: 1024px) {
+  .text .title-post-cat {
+    font-size: 20px;
+  }
+  .text p {
+    font-size: 16px;
+  }
 }
 
 .screen-reader-text {
@@ -4652,46 +4695,6 @@ body {
 .nav-next {
   width: auto;
   float: right;
-}
-
-.hexagon-cat {
-  position: absolute;
-}
-@media only screen and (max-width: 1900px) {
-  .hexagon-cat {
-    width: 153.33333px;
-    height: 176.33333px;
-  }
-}
-@media only screen and (max-width: 1024px) {
-  .hexagon-cat {
-    width: 146px;
-    height: 167.9px;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .hexagon-cat {
-    width: 128.66667px;
-    height: 147.96667px;
-  }
-}
-@media only screen and (max-width: 640px) {
-  .hexagon-cat {
-    width: 115.33333px;
-    height: 132.63333px;
-  }
-}
-@media only screen and (min-width: 320px) and (max-width: 480px) {
-  .hexagon-cat {
-    width: 71.33333px;
-    height: 82.03333px;
-  }
-}
-
-.hexagon-nav {
-  position: absolute;
-  width: 23.33333px;
-  height: 26.83333px;
 }
 
 .nav-listing {
@@ -4713,8 +4716,10 @@ body {
 .navigation li a .next {
   padding: 0;
 }
-.navigation li a:hover {
-  color: blue;
+@media only screen and (min-width: 1024px) {
+  .navigation li a:hover {
+    color: #c21053;
+  }
 }
 .navigation li .current {
   padding: 12px 8px;
@@ -4742,6 +4747,9 @@ body {
   .hexagon {
     width: 44.5px;
   }
+}
+.hexagon .current {
+  background-color: #1ca857;
 }
 
 .hexagon:before,

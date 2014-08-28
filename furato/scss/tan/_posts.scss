@@ -24,6 +24,7 @@ $colorTitle: red;
 	margin: $margin * 1.45 * -1 $margin;
 	@content;
 }
+
 .title-second{
 	font-family:UTM;
 }
@@ -233,7 +234,19 @@ $colorTitle: red;
 .primary-swap{
 	width: 100%;
 	margin: 0 auto;
-	max-width: 960px;
+	max-width: 1024px;
+	background-color: #EEEEEE;
+}
+.size-img{
+	position: relative;
+	display:block;
+	height:auto;
+	a{
+		img{
+			height: auto;
+		}
+	}
+	
 }
 .sidebar-cat{
 	background-color: red;
@@ -247,21 +260,54 @@ $colorTitle: red;
 }
 .listing-cat{
 	display:block;
-	height: 200px;
-    border-top:2px solid #E6E6FA;
+	height: auto;
+	min-height: 220px;
+    border-top: 3px solid #E6E6FA;
+    border-bottom: 3px solid #E6E6FA;
     position:relative;
-}
-.title-post-cat{
-	font-size: 24px;
-	margin-bottom: 5px;
-	a{
+    @include max-screen(1024px){
+    	margin-left: 15px;
+    }
+    .next-view{
+		position: absolute;
+		right: 0;
+		bottom: 0;
 		text-decoration: none;
-		font-weight: 900;
 		&:hover{
-			color: $colorTitle;
+			color:$color6;
 		}
 	}	
 }
+.text{
+	height: auto;
+	.title-post-cat{
+		font-family: $san-pro;
+		font-size: 24px;
+		margin-bottom: 5px;
+		a{
+			text-decoration: none;
+			font-weight: 900;
+			&:hover{
+				color: $colorTitle;
+			}
+		}
+
+	}
+	p{
+		font-family: $san;
+		font-size: 18px;
+		color: black;
+	}
+	@include max-screen(1024px){
+		.title-post-cat{
+			font-size: 20px;
+		}
+		p{
+			font-size: 16px;
+		}
+	}	
+}
+
 .screen-reader-text{
 	display: none;
 }
@@ -273,29 +319,9 @@ $colorTitle: red;
 	width: auto;
 	float: right;
 }
-.hexagon-cat {
-	position: absolute;
-	@include max-screen(1900px){
-		@include size-post(550px, $margin-rl * 5);
-	}
-	@include max-screen(1024px){
-		@include size-post(510px, $margin-rl * 4);
-	}
-	@include max-screen(768px){
-		@include size-post(440px, $margin-rl * 3);
-	}
-	@include max-screen(640px){
-		@include size-post(400px, $margin-rl * 3);
-	}
-	@include phone(){
-		@include size-post(250px, $margin-rl * 2);
-	}
-}
+
 //hexagon navigation
-.hexagon-nav{
-	position: absolute;
-	@include size-post(70px, 0);
-}
+
 .nav-listing{
 	height: 53px;
     position:relative;
@@ -313,8 +339,10 @@ $colorTitle: red;
 			.next{
 				padding: 0;
 			}
-			&:hover{
-				color:blue;
+			@include min-screen(1024px){
+				&:hover{
+					color : $color6;
+				}
 			}
 		}
 		.current{
@@ -326,7 +354,7 @@ $colorTitle: red;
 
 .page-numbers{
 	z-index: 2;
-	position: relative;
+	position: relative;	
 }
 
 .hexagon {
@@ -342,6 +370,9 @@ $colorTitle: red;
 	margin: 12.99px 0;
 	border-left: solid 3px #333333;
 	border-right: solid 3px #333333;
+	.current{
+		background-color:$color3;
+	}
 }
 
 .hexagon:before,

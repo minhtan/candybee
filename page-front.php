@@ -225,7 +225,7 @@ get_header(); ?>
 						<ul class="post-list"></ul>
 					</div>
 					<div class="text-center view-more-wrap">
-						<span class="view-more">View more</span>
+						<span class="view-more">Xem thêm</span>
 					</div>
 				</div>
 			</div>

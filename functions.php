@@ -159,3 +159,11 @@ $baseName = basename(realpath($dirName));
 require_once ("$dirName/ajax-function.php");
 
 	
+function get_the_short_excerpt(){
+$excerpt = get_the_excerpt();
+$excerpt = strip_shortcodes($excerpt);
+$excerpt = strip_tags($excerpt);
+$the_str = substr($excerpt, 0, 200);
+$the_str = preg_replace('/\w+$/', '...', $the_str);
+return $the_str;
+}
