@@ -12,14 +12,23 @@ get_header(); ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
 				<?php get_template_part( 'content', 'single' ); ?>
-				<?php candybee_post_nav(); ?>
 			<?php endwhile; // end of the loop. ?>
 			</main><!-- #main -->
 			<div class="sidebar col-3">
-				<div class="ads">		
+				<div class="ads">
+				<?php 
+						$category_id = get_cat_ID( 'Category Name' );
+					  	$the_cat = get_the_category();
+  						$category_link = get_category_link( $the_cat[0]->cat_ID );
+					 ?>
+				<a href="<?php echo $category_link; ?>">
+					<?php
+						echo $category_link; 
+					 ?>
+				</a>		
 				</div>
 				<div class="related">
-					<?php get_sidebar(); ?>	
+					<?php get_sidebar(); ?>
 				</div>
 			</div>	
 		</div><!-- #primary -->

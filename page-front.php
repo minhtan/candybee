@@ -192,7 +192,6 @@ get_header(); ?>
 					</ul>
 				</section>
 			</div>
-			
 		</div>
 		<div class="mobile-button"></div>
 		<nav class="bee-control">	
@@ -220,7 +219,7 @@ get_header(); ?>
 	<section class="second-half">
 		<div class="section-content" id="post-scroll">
 			<div class="post-scroll">
-				<div class="post-listing">
+				<div class="post-listing-front">
 					<h1 class="title-second text-center">Kiến thức mật ong</h1>
 					<div class="post-block">
 						<ul class="post-list"></ul>
