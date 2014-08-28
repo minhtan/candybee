@@ -3970,6 +3970,11 @@ body {
     background: url(../img/icons/arrow_down_32_2.png) no-repeat center;
   }
 }
+@media only screen and (max-width: 660px) {
+  .benefit-content #go-to-2nd-half {
+    margin-left: 0;
+  }
+}
 
 #media {
   background: #c21053;
@@ -3982,6 +3987,18 @@ body {
 }
 .product-image .half-item a {
   color: #ecf0f1;
+}
+@media only screen and (min-width: 1024px) {
+  .product-image .half-item a:hover .item-text {
+    background: #ecf0f1 !important;
+  }
+  .product-image .half-item a:hover h3 {
+    color: #c21053;
+  }
+  .product-image .half-item a:hover .img-zoom {
+    color: #c21053;
+    border-color: #c21053 !important;
+  }
 }
 @media only screen and (max-width: 992px) {
   .product-image .half-item {
@@ -4007,7 +4024,7 @@ body {
   }
 }
 .product-image .full-item .item-text {
-  padding-bottom: 37.5%;
+  padding-bottom: 37.51%;
   background: #ecf0f1;
 }
 @media only screen and (max-width: 992px) {
@@ -4062,6 +4079,14 @@ body {
   width: 50%;
   position: relative;
   padding-bottom: 50%;
+  -webkit-transition-duration: 0.4s;
+  -moz-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-out;
+  -moz-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
 }
 .product-image .item-text-content {
   position: absolute;
@@ -4077,6 +4102,14 @@ body {
   }
 }
 .product-image .item-text-content h3 {
+  -webkit-transition-duration: 0.4s;
+  -moz-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-out;
+  -moz-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
   font-size: 24px;
   line-height: 30px;
   margin: -5px 0 0 0;
@@ -4106,6 +4139,14 @@ body {
   }
 }
 .product-image .item-text-content .img-zoom {
+  -webkit-transition-duration: 0.4s;
+  -moz-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-out;
+  -moz-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
   position: absolute;
   bottom: 24px;
   left: 24px;
