@@ -15,11 +15,11 @@ get_header(); ?>
 		<div class="primary-swap row">
 			<div id="content" class="site-content col-9" role="main">
 				<?php if ( have_posts() ) : ?>
-					<ul class="post-cat">
+					<ul class="ul-cat-nav">
 						<?php while ( have_posts() ) : the_post(); ?>
-							<li class="post2-listing ">
+							<li class="listing-cat">
 								<div class="col-3 size-img">
-									<div class='hexagon hexagon2-mini'>
+									<div class='hexagon-help hexagon-cat'>
 										<div class='hexagon-in1'>
 											<div class="hexagon-in2 image-post">
 												<a href="<?php echo get_permalink();  ?>">
@@ -42,6 +42,9 @@ get_header(); ?>
 							</li>
 						<?php endwhile; ?>
 					</ul>
+					<?php
+					    candybee_paging_nav();
+					?>
 				<?php else :
 					get_template_part( 'content', 'none' );
 				?>

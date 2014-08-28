@@ -159,7 +159,7 @@ Ngày nay, công nghệ càng phát triển, xã hội công nghiệp hóa, các
 					Hotline: 0123456789
 				</span> -->
 				<h1 class="text-right logo">
-					<img src="<?php echo get_template_directory_uri(); ?>/img/logobee_64.png" alt="Candy Bee">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="Candy Bee">
 				</h1>
 			</nav>	
 		</div>
@@ -175,7 +175,7 @@ Ngày nay, công nghệ càng phát triển, xã hội công nghiệp hóa, các
 	<section class="second-half">
 		<div class="section-content" id="post-scroll">
 			<div class="post-scroll">
-				<div class="post-listing">
+				<div class="post-listing-front">
 					<h1 class="title-second text-center">Kiến thức mật ong</h1>
 					<div class="post-block">
 						<ul class="post-list"></ul>

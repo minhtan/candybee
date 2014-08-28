@@ -3939,7 +3939,7 @@ body {
   }
 }
 
-.post-listing {
+.post-listing-front {
   width: 100%;
   float: left;
 }
@@ -4069,47 +4069,47 @@ body {
   }
 }
 
-.hexagon2 {
+.hexagon-post {
   position: absolute;
 }
 @media only screen and (min-width: 1200px) {
-  .hexagon2 {
+  .hexagon-post {
     width: 264px;
     height: 303.6px;
   }
 }
 @media only screen and (max-width: 1200px) {
-  .hexagon2 {
+  .hexagon-post {
     width: 236.66667px;
     height: 272.16667px;
   }
 }
 @media only screen and (max-width: 1024px) {
-  .hexagon2 {
+  .hexagon-post {
     width: 199.66667px;
     height: 229.61667px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .hexagon2 {
+  .hexagon-post {
     width: 176px;
     height: 202.4px;
   }
 }
 @media only screen and (max-width: 640px) {
-  .hexagon2 {
+  .hexagon-post {
     width: 142px;
     height: 163.3px;
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) {
-  .hexagon2 {
+  .hexagon-post {
     width: 88px;
     height: 101.2px;
   }
 }
 
-.hexagon {
+.hexagon-help {
   overflow: hidden;
   visibility: hidden;
   cursor: pointer;
@@ -4163,14 +4163,17 @@ body {
   margin-top: 40px;
 }
 
-.post-cat {
+.ul-cat-nav {
   list-style-type: none;
   height: auto;
   margin-left: 0;
 }
 
-.post2-listing {
+.listing-cat {
+  display: block;
   height: 200px;
+  border-top: 2px solid #E6E6FA;
+  position: relative;
 }
 
 .title-post-cat {
@@ -4179,6 +4182,7 @@ body {
 }
 .title-post-cat a {
   text-decoration: none;
+  font-weight: 900;
 }
 .title-post-cat a:hover {
   color: red;
@@ -4198,36 +4202,122 @@ body {
   float: right;
 }
 
-.size-img {
-  margin-top: 20px;
-}
-
-.hexagon2-mini {
+.hexagon-cat {
   position: absolute;
 }
 @media only screen and (max-width: 1900px) {
-  .hexagon2-mini {
+  .hexagon-cat {
     width: 153.33333px;
     height: 176.33333px;
   }
 }
+@media only screen and (max-width: 1024px) {
+  .hexagon-cat {
+    width: 146px;
+    height: 167.9px;
+  }
+}
 @media only screen and (max-width: 768px) {
-  .hexagon2-mini {
-    width: 109.33333px;
-    height: 125.73333px;
+  .hexagon-cat {
+    width: 128.66667px;
+    height: 147.96667px;
   }
 }
 @media only screen and (max-width: 640px) {
-  .hexagon2-mini {
-    width: 142px;
-    height: 163.3px;
+  .hexagon-cat {
+    width: 115.33333px;
+    height: 132.63333px;
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) {
-  .hexagon2-mini {
-    width: 88px;
-    height: 101.2px;
+  .hexagon-cat {
+    width: 71.33333px;
+    height: 82.03333px;
   }
+}
+
+.hexagon-nav {
+  position: absolute;
+  width: 23.33333px;
+  height: 26.83333px;
+}
+
+.nav-listing {
+  height: 53px;
+  position: relative;
+  width: 44px;
+  display: inline-block;
+  border: solid 1px 1px 1px 1px;
+  text-align: center;
+}
+
+.navigation {
+  text-align: center;
+}
+.navigation li a {
+  width: 20px;
+  padding: 0;
+}
+.navigation li a .next {
+  padding: 0;
+}
+.navigation li a:hover {
+  color: blue;
+}
+.navigation li .current {
+  padding: 12px 8px;
+}
+
+.page-numbers {
+  z-index: 2;
+  position: relative;
+}
+
+.hexagon {
+  position: relative;
+  height: 25.98px;
+  background-color: #ffffff;
+  margin: 12.99px 0;
+  border-left: solid 3px #333333;
+  border-right: solid 3px #333333;
+}
+@media only screen and (min-width: 1100px) {
+  .hexagon {
+    width: 45.6px;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .hexagon {
+    width: 44.5px;
+  }
+}
+
+.hexagon:before,
+.hexagon:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 31.82px;
+  height: 31.82px;
+  -webkit-transform: scaleY(0.5774) rotate(-45deg);
+  -o-transform: scaleY(0.5774) rotate(-45deg);
+  -ms-transform: scaleY(0.5774) rotate(-45deg);
+  transform: scaleY(0.5774) rotate(-45deg);
+  -moz-transform: scaleY(0.5774) rotate(-45deg);
+  background-color: inherit;
+  left: 4.1px;
+}
+
+.hexagon:before {
+  top: -15.9099px;
+  border-top: solid 4.2426px #333333;
+  border-right: solid 4.2426px #333333;
+}
+
+.hexagon:after {
+  bottom: -15.9099px;
+  border-bottom: solid 4.2426px #333333;
+  border-left: solid 4.2426px #333333;
 }
 
 body.single-post {
@@ -4294,9 +4384,11 @@ body.single-post {
 #primary #main article {
   width: auto;
   height: auto;
+  background-color: #E6E6FA;
 }
 #primary #main article header .entry-title {
   color: black;
+  font-weight: 900;
 }
 #primary #main article .entry-content p {
   color: black;
@@ -4310,4 +4402,9 @@ body.single-post {
 }
 #primary .sidebar .related #yarpp_widget-2 .yarpp-related-widget p em {
   color: #e57d04;
+}
+
+.widget-title {
+  font-size: 25px;
+  color: black;
 }

@@ -44,32 +44,32 @@ $colorTitle: red;
 	display: inline-block;
 	@include min-screen(1200px){
 		@include margin-post($margin-rl * 6){
-			@include size-post($max-width-1900, $margin-rl * 6)
+			@include size-post($max-width-1900, $margin-rl * 6);
 		}
 	}
 	@include max-screen(1200px){
 		@include margin-post($margin-rl * 5){
-			@include size-post($max-width-1200, $margin-rl * 5)
+			@include size-post($max-width-1200, $margin-rl * 5);
 		}
 	}
 	@include max-screen(1024px){
 		@include margin-post($margin-rl * 4.5){
-			@include size-post($max-width-1024, $margin-rl * 4.5)
+			@include size-post($max-width-1024, $margin-rl * 4.5);
 		}
 	}
 	@include max-screen(768px){
 		@include margin-post($margin-rl * 4){
-			@include size-post($max-width-768, $margin-rl * 4)
+			@include size-post($max-width-768, $margin-rl * 4);
 		}
 	}
 	@include max-screen(640px){
 		@include margin-post($margin-rl * 3){
-			@include size-post($max-width-640, $margin-rl * 3)
+			@include size-post($max-width-640, $margin-rl * 3);
 		}
 	}
 	@include phone(){
 		@include margin-post($margin-rl * 2){
-			@include size-post($max-width-480, $margin-rl * 2)	
+			@include size-post($max-width-480, $margin-rl * 2);	
 		}
 	}
 }
@@ -95,7 +95,7 @@ $colorTitle: red;
 	}
 
 }
-.post-listing{
+.post-listing-front{
 	width: 100%;
 	float: left;
 }
@@ -130,22 +130,22 @@ $colorTitle: red;
 	position: absolute;
 	top:0;
 	@include min-screen(1200px){
-		@include size-post($max-width-1900,$margin-rl * 6)
+		@include size-post($max-width-1900,$margin-rl * 6);
 	}
 	@include max-screen(1200px){
-		@include size-post($max-width-1200,$margin-rl * 5)
+		@include size-post($max-width-1200,$margin-rl * 5);
 	}
 	@include max-screen(1024px){
-		@include size-post($max-width-1024,$margin-rl * 4.4)
+		@include size-post($max-width-1024,$margin-rl * 4.4);
 	}
 	@include max-screen(768px){
-		@include size-post($max-width-768,$margin-rl * 4)
+		@include size-post($max-width-768,$margin-rl * 4);
 	}
 	@include max-screen(640px){
-		@include size-post($max-width-640,$margin-rl * 3)
+		@include size-post($max-width-640,$margin-rl * 3);
 	}
 	@include phone(){
-		@include size-post($max-width-480,$margin-rl * 2)
+		@include size-post($max-width-480,$margin-rl * 2);
 	}
 }    
 .img-default{
@@ -161,60 +161,59 @@ $colorTitle: red;
 }
 .hex-gap {
     @include min-screen(1200px){
-    	@include size-gap($max-width-1900 / 2, $margin-rl * 6)
+    	@include size-gap($max-width-1900 / 2, $margin-rl * 6);
     }
     @include max-screen(1200px){
-    	@include size-gap($max-width-1200 / 2, $margin-rl * 5)
+    	@include size-gap($max-width-1200 / 2, $margin-rl * 5);
     }
     @include max-screen(1024px){
-    	@include size-gap($max-width-1024 / 2, $margin-rl * 4.5)
+    	@include size-gap($max-width-1024 / 2, $margin-rl * 4.5);
     }
     @include max-screen(768px){
-    	@include size-gap($max-width-768 / 2, $margin-rl * 4)
+    	@include size-gap($max-width-768 / 2, $margin-rl * 4);
     }
     @include max-screen(640px){
-    	@include size-gap($max-width-640 / 2, $margin-rl * 3)
+    	@include size-gap($max-width-640 / 2, $margin-rl * 3);
     }
 	@include phone(){
-		@include size-gap($max-width-480 / 2, $margin-rl * 2)
+		@include size-gap($max-width-480 / 2, $margin-rl * 2);
 	}
 }
 
-.hexagon2 {
+.hexagon-post {
 	position: absolute;
 	@include min-screen(1200px){
-		@include size-post($max-width-1900,$margin-rl * 6)
+		@include size-post($max-width-1900,$margin-rl * 6);
 	}
 	@include max-screen(1200px){
-		@include size-post($max-width-1200,$margin-rl * 5)
+		@include size-post($max-width-1200,$margin-rl * 5);
 	}
 	@include max-screen(1024px){
-		@include size-post($max-width-1024,$margin-rl * 4.5)
+		@include size-post($max-width-1024,$margin-rl * 4.5);
 	}
 	@include max-screen(768px){
-		@include size-post($max-width-768,$margin-rl * 4)
+		@include size-post($max-width-768,$margin-rl * 4);
 	}
 	@include max-screen(640px){
-		@include size-post($max-width-640,$margin-rl * 3)
+		@include size-post($max-width-640,$margin-rl * 3);
 	}
 	@include phone(){
-		@include size-post($max-width-480,$margin-rl * 2)
+		@include size-post($max-width-480,$margin-rl * 2);
 	}
 }
 
-.hexagon {
+.hexagon-help {
 	overflow: hidden;
 	visibility: hidden;
 	cursor: pointer;
-	@include transform(rotate(120deg))
-	
+	@include transform(rotate(120deg));
 }
 
 .hexagon-in1 {
 	overflow: hidden;
 	width: 100%;
 	height: 100%;
-	@include transform(rotate(-60deg))
+	@include transform(rotate(-60deg));
 }
 
 .hexagon-in2 {
@@ -228,7 +227,7 @@ $colorTitle: red;
 	background-position: 50%;
 	visibility: visible;
 	position: relative;
-	@include transform(rotate(-60deg))
+	@include transform(rotate(-60deg));
 }
 // trang listing
 .primary-swap{
@@ -241,26 +240,28 @@ $colorTitle: red;
 	height: 500px;
 	margin-top: 40px; 
 }
-.post-cat{
+.ul-cat-nav{
 	list-style-type: none;
 	height:auto;
 	margin-left: 0;
 }
-.post2-listing{
-	height:200px;
+.listing-cat{
+	display:block;
+	height: 200px;
+    border-top:2px solid #E6E6FA;
+    position:relative;
 }
 .title-post-cat{
 	font-size: 24px;
 	margin-bottom: 5px;
 	a{
 		text-decoration: none;
+		font-weight: 900;
 		&:hover{
 			color: $colorTitle;
 		}
-	}
-
+	}	
 }
-
 .screen-reader-text{
 	display: none;
 }
@@ -272,24 +273,103 @@ $colorTitle: red;
 	width: auto;
 	float: right;
 }
-
-.size-img{
-	margin-top: 20px;
-}
-.hexagon2-mini {
+.hexagon-cat {
 	position: absolute;
 	@include max-screen(1900px){
-		@include size-post(550px, $margin-rl * 5)
+		@include size-post(550px, $margin-rl * 5);
+	}
+	@include max-screen(1024px){
+		@include size-post(510px, $margin-rl * 4);
 	}
 	@include max-screen(768px){
-		@include size-post(400px, $margin-rl * 4)
+		@include size-post(440px, $margin-rl * 3);
 	}
 	@include max-screen(640px){
-		@include size-post($max-width-640, $margin-rl * 3)
+		@include size-post(400px, $margin-rl * 3);
 	}
 	@include phone(){
-		@include size-post($max-width-480, $margin-rl * 2)
+		@include size-post(250px, $margin-rl * 2);
 	}
+}
+//hexagon navigation
+.hexagon-nav{
+	position: absolute;
+	@include size-post(70px, 0);
+}
+.nav-listing{
+	height: 53px;
+    position:relative;
+    width: 44px;
+    display: inline-block;
+    border: solid 1px 1px 1px 1px;
+	text-align: center;
+}
+.navigation{
+	text-align: center;
+	li{
+		a{
+			width: 20px;
+			padding: 0;
+			.next{
+				padding: 0;
+			}
+			&:hover{
+				color:blue;
+			}
+		}
+		.current{
+			padding: 12px 8px;
+		}
+	}
+		
+}
+
+.page-numbers{
+	z-index: 2;
+	position: relative;
+}
+
+.hexagon {
+	position: relative;
+	@include min-screen(1100px){
+		width: 45.6px; 
+	}
+	@include max-screen(1200px){
+		width: 44.5px; 
+	}
+	height: 25.98px;
+	background-color: #ffffff;
+	margin: 12.99px 0;
+	border-left: solid 3px #333333;
+	border-right: solid 3px #333333;
+}
+
+.hexagon:before,
+.hexagon:after {
+	content: "";
+	position: absolute;
+	z-index: 1;
+	width: 31.82px;
+	height: 31.82px;
+	-webkit-transform: scaleY(0.5774) rotate(-45deg);
+	-o-transform: scaleY(0.5774) rotate(-45deg);
+	-ms-transform: scaleY(0.5774) rotate(-45deg);
+	transform: scaleY(0.5774) rotate(-45deg);
+	-moz-transform: scaleY(0.5774) rotate(-45deg);
+	background-color: inherit;
+	left: 4.1px;
+}
+
+.hexagon:before {
+  top: -15.9099px;
+  border-top: solid 4.2426px #333333;
+  border-right: solid 4.2426px #333333;
+}
+
+.hexagon:after {
+  bottom: -15.9099px;
+  border-bottom: solid 4.2426px #333333;
+  border-left: solid 4.2426px #333333;
 }
 
 //trang single
@@ -356,9 +436,11 @@ body.single-post{
 		article{
 			width: auto;
 			height: auto;
+			background-color: #E6E6FA;
 			header{
 				.entry-title{
 					color: black;
+					font-weight: 900;
 				}
 			}
 			.entry-content{
@@ -388,4 +470,8 @@ body.single-post{
 			}
 		}
 	}
+}
+.widget-title{
+	font-size: 25px;
+	color: black;
 }

@@ -42,7 +42,6 @@ function candybee_paging_nav() {
 		'add_args' => array_map( 'urlencode', $query_args ),
 		'prev_text' => __( '&larr;', 'candybee' ),
 		'next_text' => __( '&rarr;', 'candybee' ),
-		'type' => 'array'
 	) );
 
 	if ( $links ) :
@@ -51,16 +50,9 @@ function candybee_paging_nav() {
 	<nav class="navigation paging-navigation" role="navigation">
 		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'candybee' ); ?></h1>
 		<div class="pagination loop-pagination">
-			<ul class="ul-cat-nav">
-				<?php foreach ($links as $link) : ?>
-					<li class="nav-listing">
-						<div class="hexagon">
-							<?php echo $link ?>
-						</div>
-
-					</li>
-				<?php endforeach; ?>
-			</ul>
+			<div class="hexagon-nav">
+				<?php echo $links; ?>
+			</div>
 			
 		</div><!-- .pagination -->
 	</nav><!-- .navigation -->

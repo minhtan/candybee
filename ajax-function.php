@@ -66,7 +66,7 @@ function create_post_html($result, $return_post){
 		}else{
 			$temp = $temp . "<li class ='post'>";
 		}
-		$temp = $temp . "<div class='hexagon hexagon2'>";
+		$temp = $temp . "<div class='hexagon-help hexagon-post'>";
 		$temp = $temp . "<div class='hexagon-in1'>";
 		$temp = $temp . "<div class='hexagon-in2 img-loading'>";
 		$temp = $temp . "<a href='" . get_permalink($result[$i]->ID) . "'>";
