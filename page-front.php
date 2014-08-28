@@ -68,7 +68,7 @@ get_header(); ?>
 							</div>
 						</article>
 						<p class="text-center col-12 benefit-text">
-							<span class="benefit-read-more">Đọc thêm chi tiết về công dụng của mật ong tại đây: <span id="go-to-2nd-half"></span></span>
+							<span class="benefit-read-more">Đọc thêm chi tiết về công dụng của mật ong tại đây:</span><span id="go-to-2nd-half"></span>
 						</p>
 					</div>
 				</section>
@@ -82,10 +82,10 @@ get_header(); ?>
 								</span>
 							</div> -->
 							<div class="half-item">
-								<div class="item-img">
-									<img src="<?php echo get_template_directory_uri(); ?>/img/500x500.jpg" alt="">
-								</div>
 								<a class="fancybox" rel="group" href="<?php echo get_template_directory_uri(); ?>/img/1920x1200.jpg">
+									<div class="item-img">
+										<img src="<?php echo get_template_directory_uri(); ?>/img/500x500.jpg" alt="">
+									</div>
 									<div class="item-text">
 										<div class="item-text-content">
 											<h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, fugit.</h3>
@@ -94,10 +94,10 @@ get_header(); ?>
 									</div>
 								</a>
 							</div><div class="half-item">
-								<div class="item-img right">
-									<img src="<?php echo get_template_directory_uri(); ?>/img/500x500.jpg" alt="">
-								</div>
 								<a class="fancybox" rel="group" href="<?php echo get_template_directory_uri(); ?>/img/1920x1200.jpg">
+									<div class="item-img right">
+										<img src="<?php echo get_template_directory_uri(); ?>/img/500x500.jpg" alt="">
+									</div>
 									<div class="item-text">
 										<div class="item-text-content">
 											<h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, architecto!</h3>
@@ -106,10 +106,10 @@ get_header(); ?>
 									</div>
 								</a>
 							</div><div class="full-item">
-								<div class="item-img">
-									<img src="<?php echo get_template_directory_uri(); ?>/img/1000x750.jpg" alt="">
-								</div>
 								<a class="fancybox" rel="group" href="<?php echo get_template_directory_uri(); ?>/img/1920x1200.jpg">
+									<div class="item-img">
+										<img src="<?php echo get_template_directory_uri(); ?>/img/1000x750.jpg" alt="">
+									</div>
 									<div class="item-text">
 										<div class="item-text-content">
 											<h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h3>
@@ -118,10 +118,10 @@ get_header(); ?>
 									</div>
 								</a>
 							</div><div class="half-item">
-								<div class="item-img">
-									<img src="<?php echo get_template_directory_uri(); ?>/img/500x500.jpg" alt="">
-								</div>
-								<a class="fancybox" rel="group" href="<?php echo get_template_directory_uri(); ?>/img/1920x1200.jpg">
+									<a class="fancybox" rel="group" href="<?php echo get_template_directory_uri(); ?>/img/1920x1200.jpg">
+									<div class="item-img">
+										<img src="<?php echo get_template_directory_uri(); ?>/img/500x500.jpg" alt="">
+									</div>
 									<div class="item-text">
 										<div class="item-text-content">
 											<h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam tenetur sit earum.</h3>
@@ -180,6 +180,16 @@ get_header(); ?>
 				</section>
 				<section class="bee-content" id="faq">
 					<h2>Những câu hỏi thường gặp</h2>
+					<ul class="faq">
+						<li>
+							<h4 class="ques">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum, esse?</h4>
+							<p class="ans">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas dolorem possimus quia aut mollitia enim perspiciatis hic id libero, labore dolore laboriosam ducimus quibusdam dignissimos, assumenda aspernatur quasi fugit aperiam tempora cum? Tempore veniam repellat quam inventore tenetur, asperiores totam.</p>
+						</li>
+						<li>
+							<h4 class="ques">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum, esse?</h4>
+							<p class="ans">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas dolorem possimus quia aut mollitia enim perspiciatis hic id libero, labore dolore laboriosam ducimus quibusdam dignissimos, assumenda aspernatur quasi fugit aperiam tempora cum? Tempore veniam repellat quam inventore tenetur, asperiores totam.</p>
+						</li>
+					</ul>
 				</section>
 			</div>
 			
@@ -194,9 +204,6 @@ get_header(); ?>
 				<li class="faq" nav="faq"><span>Hỏi đáp</span></li>
 				<li class="close"><span>Quay lại</span></li>
 			</ul>
-			<!-- <span class="hot-line">
-				Hotline: 0123456789
-			</span> -->
 			<h1 class="text-right logo">
 				<img src="<?php echo get_template_directory_uri(); ?>/img/logobee_128.png" alt="Candy Bee">
 			</h1>

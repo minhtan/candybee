@@ -227,6 +227,19 @@ $(document).ready(function() {
 	}
 	smallHeightDeviceNav();
 
+	//FAQ accordion
+	var allPanels = $('.faq > .ans').hide();
+	$('.faq > li > .ques').click(function() {
+		$this = $(this);
+		$target =  $this.next();
+
+		if(!$target.hasClass('active')){
+			allPanels.removeClass('active').slideUp();
+			$target.addClass('active').slideDown();
+		}
+		return false;
+	});
+
 	//resize function
 	$(window).resize(function(){
 		winHeight = $(window).height();

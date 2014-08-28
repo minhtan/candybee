@@ -41,6 +41,8 @@
 				color: $color4
 			&.info
 				background: $color1
+				span
+					color: $color2
 			&.benefit
 				background: $color3
 			&.media
@@ -59,6 +61,7 @@
 		cursor: pointer
 		line-height: 64px
 		color: $color5
+		font-size: 16px
 	&.small
 		li
 			height: 40px
@@ -117,13 +120,16 @@
 			text-align: center
 //#info
 #info
+	color: $color2
 	padding-top: 64px
+	h2
+		color: $color2
 	+max-screen($mobile-nav-trigger-width)
 		padding-top: 0
 		h2
 			padding-top: 55px
 	#info-intro
-		font-size: 20px
+		font-size: 24px
 		display: block
 		padding-right: 25%
 		padding-left: 15px
@@ -187,13 +193,14 @@
 					+border-bottom
 	.benefit-text
 		+max-screen($grid-max-width)
-			padding: 0 17.5%
+			padding: 0 10.5%
 		+max-screen(660px)
 			padding: 0 21.5%
 	.benefit-read-more
 		display: inline-block
 		line-height: 32px
 		vertical-align: top
+		padding-bottom: 8px
 	#go-to-2nd-half
 		margin-left: 10px
 		display: inline-block
@@ -227,6 +234,7 @@
 			border-color: $color6 !important
 		.item-img
 			+max-screen($medium-screen)
+				float: none
 				width: 100%
 		.item-text
 			padding-bottom: 37.5%
@@ -323,8 +331,8 @@
 			li > span
 				line-height: 64px
 	.pricing
-		max-width: 645px
-		margin: 0 auto !important
+		// max-width: 645px
+		// margin: 0 auto !important
 		li
 			+box-sizing(border-box)
 			margin: 0 15px

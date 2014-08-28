@@ -1691,7 +1691,7 @@ embed, figure, iframe {
 
 p {
   font-weight: inherit;
-  font-size: 0.875rem;
+  font-size: 1.125rem;
   margin-bottom: 1rem;
   text-rendering: optimizeLegibility;
   line-height: 1.5;
@@ -1776,7 +1776,7 @@ small {
 ul,
 ol,
 dl {
-  font-size: 0.875rem;
+  font-size: 1.125rem;
   padding: 0;
   margin-bottom: 1.25rem;
   margin-left: 0.9375rem;
@@ -3442,7 +3442,7 @@ body {
 }
 
 .first-half {
-  background: #4f3524;
+  background: #ffba15;
   -webkit-transform: translateX(-50%);
   -moz-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
@@ -3553,7 +3553,7 @@ body {
 }
 
 .second-half {
-  background: #378b2e;
+  background: #4f3524;
   -webkit-transform: translateX(50%);
   -moz-transform: translateX(50%);
   -ms-transform: translateX(50%);
@@ -3709,19 +3709,22 @@ body {
   color: #ecf0f1;
 }
 .bee-control li.active.info {
-  background: #4f3524;
+  background: #ffba15;
+}
+.bee-control li.active.info span {
+  color: #4f3524;
 }
 .bee-control li.active.benefit {
-  background: #ff913f;
+  background: #1ca857;
 }
 .bee-control li.active.media {
-  background: #fbce0a;
+  background: #c21053;
 }
 .bee-control li.active.price {
   background: #2d4471;
 }
 .bee-control li.active.faq {
-  background: #aaa838;
+  background: #e67e22;
 }
 .bee-control li > span {
   display: block;
@@ -3733,6 +3736,7 @@ body {
   cursor: pointer;
   line-height: 64px;
   color: #3b2313;
+  font-size: 16px;
 }
 .bee-control.small li {
   height: 40px;
@@ -3824,7 +3828,11 @@ body {
 }
 
 #info {
+  color: #4f3524;
   padding-top: 64px;
+}
+#info h2 {
+  color: #4f3524;
 }
 @media only screen and (max-width: 960px) {
   #info {
@@ -3835,7 +3843,7 @@ body {
   }
 }
 #info #info-intro {
-  font-size: 20px;
+  font-size: 24px;
   display: block;
   padding-right: 25%;
   padding-left: 15px;
@@ -3886,7 +3894,7 @@ body {
 }
 
 #benefit {
-  background: #ff913f;
+  background: #1ca857;
   padding-bottom: 25px;
 }
 
@@ -3935,7 +3943,7 @@ body {
 }
 @media only screen and (max-width: 768px) {
   .benefit-content .benefit-text {
-    padding: 0 17.5%;
+    padding: 0 10.5%;
   }
 }
 @media only screen and (max-width: 660px) {
@@ -3947,6 +3955,7 @@ body {
   display: inline-block;
   line-height: 32px;
   vertical-align: top;
+  padding-bottom: 8px;
 }
 .benefit-content #go-to-2nd-half {
   margin-left: 10px;
@@ -3963,7 +3972,7 @@ body {
 }
 
 #media {
-  background: #fbce0a;
+  background: #c21053;
 }
 
 .product-image .half-item {
@@ -3985,14 +3994,15 @@ body {
   width: 100%;
 }
 .product-image .full-item a {
-  color: #fbce0a;
+  color: #c21053;
 }
 .product-image .full-item .img-zoom {
-  color: #fbce0a;
-  border-color: #fbce0a !important;
+  color: #c21053;
+  border-color: #c21053 !important;
 }
 @media only screen and (max-width: 992px) {
   .product-image .full-item .item-img, .product-image .full-item .item-img-full {
+    float: none;
     width: 100%;
   }
 }
@@ -4007,7 +4017,7 @@ body {
   }
 }
 .product-image .full-item .item-text h3 {
-  color: #fbce0a;
+  color: #c21053;
   font-size: 42px;
   line-height: 52px;
 }
@@ -4134,10 +4144,6 @@ body {
 #price .row ul li > span {
   line-height: 64px;
 }
-#price .pricing {
-  max-width: 645px;
-  margin: 0 auto !important;
-}
 #price .pricing li {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -4204,7 +4210,7 @@ body {
 }
 
 #faq {
-  background: #aaa838;
+  background: #e67e22;
 }
 
 .title-second {
@@ -4473,11 +4479,11 @@ body {
 
 .img-default {
   background-image: url(../img/bee_64.png);
-  background-color: #ff913f;
+  background-color: #1ca857;
 }
 
 .img-loading {
-  background-color: #ff913f;
+  background-color: #1ca857;
   background-image: url(../img/loading.gif);
 }
 .img-loading img {
@@ -4684,7 +4690,7 @@ body.single-post {
   margin: 0;
 }
 #header .logo-header .slogan {
-  color: #ff913f;
+  color: #1ca857;
   vertical-align: bottom;
   line-height: 52px;
   font-family: "UTM";
@@ -4749,11 +4755,11 @@ body.single-post {
 }
 #primary .sidebar .ads {
   height: 100px;
-  background-color: #4f3524;
+  background-color: #ffba15;
 }
 #primary .sidebar .related #yarpp_widget-2 h1 {
-  color: #ff913f;
+  color: #1ca857;
 }
 #primary .sidebar .related #yarpp_widget-2 .yarpp-related-widget p em {
-  color: #ff913f;
+  color: #1ca857;
 }
