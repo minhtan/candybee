@@ -189,6 +189,10 @@ get_header(); ?>
 							<h4 class="ques">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum, esse?</h4>
 							<p class="ans">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas dolorem possimus quia aut mollitia enim perspiciatis hic id libero, labore dolore laboriosam ducimus quibusdam dignissimos, assumenda aspernatur quasi fugit aperiam tempora cum? Tempore veniam repellat quam inventore tenetur, asperiores totam.</p>
 						</li>
+						<li>
+							<h4 class="ques">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum, esse?</h4>
+							<p class="ans">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas dolorem possimus quia aut mollitia enim perspiciatis hic id libero, labore dolore laboriosam ducimus quibusdam dignissimos, assumenda aspernatur quasi fugit aperiam tempora cum? Tempore veniam repellat quam inventore tenetur, asperiores totam.</p>
+						</li>
 					</ul>
 				</section>
 			</div>
