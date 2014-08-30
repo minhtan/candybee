@@ -228,9 +228,11 @@ get_header(); ?>
 					<div class="post-block">
 						<ul class="post-list"></ul>
 					</div>
-					<div class="text-center view-more-wrap">
-						<span class="view-more">Xem thêm</span>
-					</div>
+					<div class="view-more-container">
+						<div class="text-center view-more-wrap effect-button-3d">
+							<span class="view-more" data-hover="Xem thêm"></span>
+						</div>
+					</div>	
 				</div>
 			</div>
 		</div>  

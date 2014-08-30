@@ -24,5 +24,25 @@
 <body <?php body_class(); ?>>
 	<?php if( is_front_page() ) : ?>
 	<?php else : ?>
+		<header id="header"> 
+			<div class="header-wrap row">
+				<div class="logo-header col-8">
+					<h1>
+						<a href="<?php echo home_url();?>">
+							<img src="<?php echo get_template_directory_uri(); ?>/img/logobee_64.png">
+						</a>
+						<span class="slogan"> - Mật ong chất</span>
+					</h1>
+				</div>
+				<div class="social-link col-4">
+					<ul>
+						<li><a href="https://www.facebook.com/" class="fb"></a></li>
+						<li><a href="" class="tw">twitter</a></li>
+						<li><a href="" class="gg">google+</a></li>
+						<li><a href="" class="yt">youtube</a></li>
+					</ul>
+				</div>
+			</div>
+		</header>
 	<?php endif; ?>	
 	

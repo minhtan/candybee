@@ -13,24 +13,6 @@ get_header(); ?>
 
 	<section id="primary-cat" class="content-area">
 		<div class="primary-swap">
-			<header id="header" class="row">
-				<div class="logo-header col-8">
-					<h1>
-						<a href="<?php echo home_url();?>">
-							<img src="<?php echo get_template_directory_uri(); ?>/img/logobee_64.png">
-						</a>
-						<span class="slogan"> - Mật ong chất</span>
-					</h1>
-				</div>
-				<div class="social-link col-4">
-					<ul>
-						<li><a href="https://www.facebook.com/" class="fb"></a></li>
-						<li><a href="" class="tw">twitter</a></li>
-						<li><a href="" class="gg">google+</a></li>
-						<li><a href="" class="yt">youtube</a></li>
-					</ul>
-				</div>
-			</header>
 			<div id="content" class="site-content" role="main">
 				<?php if ( have_posts() ) : ?>
 					<ul class="ul-cat-nav">
