@@ -348,8 +348,8 @@
 			li > span
 				line-height: 64px
 	.pricing
-		// max-width: 645px
-		// margin: 0 auto !important
+		max-width: 645px
+		margin: 0 auto !important
 		li
 			+box-sizing(border-box)
 			margin: 0 15px
@@ -366,6 +366,8 @@
 	.contact-wrap
 		+max-screen($grid-max-width)
 			padding-top: 40px
+		+max-screen($extra-small-screen)
+			padding: 40px 15px 0
 	.contact
 		max-width: 330px
 		margin: 0 auto !important
