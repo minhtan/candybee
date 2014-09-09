@@ -62,9 +62,9 @@ function create_post_html($result, $return_post){
 	for ($i = 0; $i < count($result); $i++) {
 
 		if(check_has_gap($return_post, $i)){
-			$temp = $temp . "<li class ='post hex-gap'>";	
+			$temp = $temp . "<li class ='post-mini hex-gap'>";	
 		}else{
-			$temp = $temp . "<li class ='post'>";
+			$temp = $temp . "<li class ='post-mini'>";
 		}
 		$temp = $temp . "<div class='hexagon-help hexagon-post'>";
 		$temp = $temp . "<div class='hexagon-in1'>";

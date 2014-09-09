@@ -6,6 +6,23 @@
  */
 
 get_header(); ?>
+	<div class="cat_list_wrap">
+		<ul class="cat_list">
+			<li class="one_cat"><a class="cat_link" data-hover="Home" href="<?php echo home_url();?>">Home</a></li>
+			<?php
+			$args = array(
+			  'orderby' => 'name'
+			  );
+			$categories = get_categories( $args );
+			foreach ( $categories as $category ) : ?>
+				<?php 
+					$cat_link =  get_category_link($category->term_id);
+					$cat_name = $category->name;
+			 	?>
+				<li class="one_cat"><a class="cat_link" data-hover="<?php echo $cat_name; ?>" href="<?php echo $cat_link; ?>"><?php echo $cat_name; ?></a></li>
+			<?php endforeach; ?>
+		</ul>
+	</div>
 	<div class="primary-wrap">
 		<div id="primary" class="content-area row">
 			<main id="main" class="site-main col-9" role="main">
@@ -16,16 +33,6 @@ get_header(); ?>
 			</main><!-- #main -->
 			<div class="sidebar col-3">
 				<div class="ads">
-				<?php 
-						$category_id = get_cat_ID( 'Category Name' );
-					  	$the_cat = get_the_category();
-  						$category_link = get_category_link( $the_cat[0]->cat_ID );
-					 ?>
-				<a href="<?php echo $category_link; ?>">
-					<?php
-						echo $category_link; 
-					 ?>
-				</a>		
 				</div>
 				<div class="related">
 					<?php get_sidebar(); ?>

@@ -10,6 +10,7 @@ $max-width-640: 480px;
 $max-width-480: 300px;
 $colorTitle: red;	
 
+// body
 @mixin size-post($max-width, $margin){
 	width: $max-width / 3 - $margin * 2;
 	height: ($max-width / 3 - $margin * 2) * 1.15;
@@ -32,15 +33,7 @@ $colorTitle: red;
 	width: 100%;
 	float: left;
 }
-.view-more{
-	@include button;
-}
-.view-more-wrap{
-	margin: 40px 0 40px 0;
-	width: 100%;
-	float: left;
-}
-.post{
+.post-mini{
 	position: relative;
 	display: inline-block;
 	@include min-screen(1200px){
@@ -77,24 +70,16 @@ $colorTitle: red;
 .post-title{
 	z-index: 9999;
 	margin: 0;
-	padding: 0 5px;
-	background-color: rgba(0,0,0,0.4);
-	height:100px;
-	// background-image:url(../img/bg-title.png);
+	padding: 72px 5px;
+	background-color: rgba(0,0,0,0.5);
+	height: 100%;
+	widows: 100%;
 	font-size: 19px;
-	@include max-screen(768px){
-		font-size: 16px;
-		padding:0 4px;
+	&:hover{
+	    @include transition-timing-function(ease-out);
+ 		@include transition-duration(0.5s);	
+ 		background-color: rgba(0,0,0,0.1);
 	}
-	@include max-screen(640px){
-		font-size: 14px;
-		padding:0 3.5px;
-	}
-	@include max-screen(480px){
-		font-size: 11px;
-		padding: 0 3px;
-	}
-
 }
 .post-listing-front{
 	width: 100%;
@@ -230,279 +215,64 @@ $colorTitle: red;
 	position: relative;
 	@include transform(rotate(-60deg));
 }
-// trang listing
-.primary-swap{
+
+/* effect button: 3d rolling links*/
+.view-more{
+	@include button;
+}
+.view-more-container{
 	width: 100%;
-	margin: 0 auto;
-	max-width: 1024px;
-	background-color: #EEEEEE;
-}
-.size-img{
-	position: relative;
-	display:block;
-	height:auto;
-	a{
-		img{
-			height: auto;
-		}
-	}
-	
-}
-.sidebar-cat{
-	background-color: red;
-	height: 500px;
-	margin-top: 40px; 
-}
-.ul-cat-nav{
-	list-style-type: none;
-	height:auto;
-	margin-left: 0;
-}
-.listing-cat{
-	display:block;
-	height: auto;
-	min-height: 220px;
-    border-top: 3px solid #E6E6FA;
-    border-bottom: 3px solid #E6E6FA;
-    position:relative;
-    @include max-screen(1024px){
-    	margin-left: 15px;
-    }
-    .next-view{
-		position: absolute;
-		right: 0;
-		bottom: 0;
-		text-decoration: none;
-		&:hover{
-			color:$color6;
-		}
-	}	
-}
-.text{
-	height: auto;
-	.title-post-cat{
-		font-family: $san-pro;
-		font-size: 24px;
-		margin-bottom: 5px;
-		a{
-			text-decoration: none;
-			font-weight: 900;
-			&:hover{
-				color: $colorTitle;
-			}
-		}
-
-	}
-	p{
-		font-family: $san;
-		font-size: 18px;
-		color: black;
-	}
-	@include max-screen(1024px){
-		.title-post-cat{
-			font-size: 20px;
-		}
-		p{
-			font-size: 16px;
-		}
-	}	
-}
-
-.screen-reader-text{
-	display: none;
-}
-.nav-previous{
-	width: auto;
+	margin: 40px 0 40px 0;
 	float: left;
-}
-.nav-next{
-	width: auto;
-	float: right;
-}
-
-//hexagon navigation
-
-.nav-listing{
-	height: 53px;
-    position:relative;
-    width: 44px;
-    display: inline-block;
-    border: solid 1px 1px 1px 1px;
 	text-align: center;
 }
-.navigation{
+.view-more-wrap{
+	width: 100px;
+	cursor: pointer;
 	text-align: center;
-	li{
-		a{
-			width: 20px;
-			padding: 0;
-			.next{
-				padding: 0;
-			}
-			@include min-screen(1024px){
-				&:hover{
-					color : $color6;
-				}
-			}
-		}
-		.current{
-			padding: 12px 8px;
-		}
-	}
-		
+	display: inline-block;
 }
-
-.page-numbers{
-	z-index: 2;
-	position: relative;	
-}
-
-.hexagon {
+.effect-button-3d span {
 	position: relative;
-	@include min-screen(1100px){
-		width: 45.6px; 
-	}
-	@include max-screen(1200px){
-		width: 44.5px; 
-	}
-	height: 25.98px;
-	background-color: #ffffff;
-	margin: 12.99px 0;
-	border-left: solid 3px #333333;
-	border-right: solid 3px #333333;
-	.current{
-		background-color:$color3;
-	}
+	display: inline-block;
+	padding: 0 14px;
+	background: $color7;
+	-webkit-transition: -webkit-transform 0.3s;
+	-moz-transition: -moz-transform 0.3s;
+	transition: transform 0.3s;
+	-webkit-transform-origin: 50% 0;
+	-moz-transform-origin: 50% 0;
+	transform-origin: 50% 0;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
 }
 
-.hexagon:before,
-.hexagon:after {
-	content: "";
+.effect-button-3d span::before {
 	position: absolute;
-	z-index: 1;
-	width: 31.82px;
-	height: 31.82px;
-	-webkit-transform: scaleY(0.5774) rotate(-45deg);
-	-o-transform: scaleY(0.5774) rotate(-45deg);
-	-ms-transform: scaleY(0.5774) rotate(-45deg);
-	transform: scaleY(0.5774) rotate(-45deg);
-	-moz-transform: scaleY(0.5774) rotate(-45deg);
-	background-color: inherit;
-	left: 4.1px;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: $color7;
+	content: attr(data-hover);
+	-webkit-transition: background 0.3s;
+	-moz-transition: background 0.3s;
+	transition: background 0.3s;
+	-webkit-transform: rotateX(-90deg);
+	-moz-transform: rotateX(-90deg);
+	transform: rotateX(-90deg);
+	-webkit-transform-origin: 50% 0;
+	-moz-transform-origin: 50% 0;
+	transform-origin: 50% 0;
+	cursor: pointer;
 }
 
-.hexagon:before {
-  top: -15.9099px;
-  border-top: solid 4.2426px #333333;
-  border-right: solid 4.2426px #333333;
+.effect-button-3d:hover span
+{
+	@include transform(rotateX(90deg) translateY(-22px));
 }
-
-.hexagon:after {
-  bottom: -15.9099px;
-  border-bottom: solid 4.2426px #333333;
-  border-left: solid 4.2426px #333333;
-}
-
-//trang single
-body.single-post{
-	height: 600px;
-}
-#header{
-	.logo-header{
-		h1{
-			margin: 0;
-		}
-		.slogan{
-			color: $color3;
-			vertical-align: bottom;
-			line-height: 52px;
-			font-family: "UTM";
-		}
-	}
-	.social-link{
-		ul{
-			margin: 0;
-			float: right;
-			li{
-				float: left;
-				display: block;
-				width: 64px;
-				height: 64px;
-				margin-left: 5px;
-				a{
-					display: block;
-					width: 100%;
-					height: 50%;
-					text-indent: -9999px;
-					@include transition-duration(0.2s);
-					margin-top: 32px;
-					&.fb{
-						background: url(../img/icons/facebook_64.png) no-repeat;
-					}
-					&.tw{
-						background: url(../img/icons/twitter_64.png) no-repeat;
-					}
-					&.gg{
-						background: url(../img/icons/google+_64.png) no-repeat;
-					}
-					&.yt{
-						background: url(../img/icons/youtube_64.png) no-repeat;
-					}
-					&:hover{
-						margin-top: 0;
-						height: 100%;
-					}
-				}
-			}
-		}
-	}
-}
-#primary{
-	width: 80%; 
-	margin: 50px auto;
-	@include max-screen(480px){
-		width: 100%;
-	}
-	#main{
-		article{
-			width: auto;
-			height: auto;
-			background-color: #E6E6FA;
-			header{
-				.entry-title{
-					color: black;
-					font-weight: 900;
-				}
-			}
-			.entry-content{
-				p{
-					color: black;
-				}
-			}
-		}
-	}
-	.sidebar{
-		.ads{
-			height: 100px;
-			background-color: $color1;
-		}
-		.related{
-			#yarpp_widget-2{
-				h1{
-					color: $color3;
-				}
-				.yarpp-related-widget{
-					p{
-						em{
-							color: $color3;
-						}
-					}
-				}
-			}
-		}
-	}
-}
-.widget-title{
-	font-size: 25px;
-	color: black;
+.effect-button-3d:hover span::before,
+.effect-button-3d:focus span::before {
+	background: $color7;
 }
