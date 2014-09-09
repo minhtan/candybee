@@ -10,15 +10,6 @@ $max-width-640: 480px;
 $max-width-480: 300px;
 $colorTitle: red;	
 
-//header chung cho tat ca cac page
-header{
-	width: auto;
-	.header-wrap{
-		max-width: 1024px;
-		margin: 0 auto;
-	}
-}
-
 // body
 @mixin size-post($max-width, $margin){
 	width: $max-width / 3 - $margin * 2;
@@ -42,7 +33,7 @@ header{
 	width: 100%;
 	float: left;
 }
-.post{
+.post-mini{
 	position: relative;
 	display: inline-block;
 	@include min-screen(1200px){
@@ -87,7 +78,7 @@ header{
 	&:hover{
 	    @include transition-timing-function(ease-out);
  		@include transition-duration(0.5s);	
- 		background-color: rgba(0,0,0,0);
+ 		background-color: rgba(0,0,0,0.1);
 	}
 }
 .post-listing-front{
@@ -225,7 +216,7 @@ header{
 	@include transform(rotate(-60deg));
 }
 
-/* Effect 2: 3D rolling links, idea from http://hakim.se/thoughts/rolling-links */
+/* effect button: 3d rolling links*/
 .view-more{
 	@include button;
 }

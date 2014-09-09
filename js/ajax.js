@@ -24,11 +24,7 @@ function get_data_ajax(clientPost ){
 				loadImg($(this));
 				checkImg($(this));
 			});
-			if(json_data.has_post_remain){
-				$('.view-more').html('Xem thêm');
-			}else{
-				$('.view-more').remove();
-			}
+			check_view_more_extant(json_data);
 			setTimeout(function () {
 		        postScroll.refresh();
 		    }, 0);
@@ -39,8 +35,16 @@ function get_data_ajax(clientPost ){
 	});
 }
 
+function check_view_more_extant(json_data){
+	if(json_data.has_post_remain){
+		$('.view-more').html('Xem thêm');
+	}else{
+		$('.view-more').remove();
+	}
+}
+
 function get_post_count_rq(){
-	return $('.post-list').children('.post').length;
+	return $('.post-list').children('.post-mini').length;
 
 }
 

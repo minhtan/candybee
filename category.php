@@ -23,7 +23,7 @@ get_header(); ?>
 										<img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id()); ?>"/>
 									</a>		
 								</div>
-								<div class="text col-8">
+								<div class="post-cat col-8">
 									<h2 class="title-post-cat">
 										<a href="<?php echo get_permalink();  ?>">
 											<?php echo the_title(); ?>

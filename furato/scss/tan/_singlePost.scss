@@ -1,7 +1,7 @@
 //trang single
 body.single-post{
-	max-height: 1200px;
 	height: auto;
+	background-color: $color9;
 }
 header{
 	width: auto;
@@ -33,14 +33,14 @@ header{
 				height: 64px;
 				margin-left: 5px;
 				a{
-					display: block;
 					width: 100%;
-					height: 50%;
 					text-indent: -9999px;
 					@include min-screen(1024px){
+						@include transition-timing-function(ease-out);
 						@include transition-duration(0.2s);
-					}
-					margin-top: 32px;
+						display: block;
+						height: 50%;
+						margin-top: 32px;
 						&.fb{
 							background: url(../img/icons/facebook_64.png) no-repeat;
 						}
@@ -57,7 +57,9 @@ header{
 							margin-top: 0;
 							height: 100%;
 						}
+					}
 					@include max-screen(1024px){
+						display: block;
 						height: 100%;
 						margin-top: 20px;
 						&.fb{
@@ -73,7 +75,6 @@ header{
 							background: url(../img/icons/newSocial/yt.png) no-repeat;
 						}	
 					}
-
 				}
 			}
 		}
@@ -81,7 +82,7 @@ header{
 }
 // link category
 .cat_list_wrap{
-	background-color: $color7;
+	background-color: $color9;
 	width: auto;
 	max-width: 1024px;
 	margin: 10px auto;
@@ -97,12 +98,11 @@ header{
 	font-size: 30px;
 	font-family: $san-pro;	
 	width: 24%;
-
 }
 .one_cat a {
-	color: $color3;
-	text-shadow: 0 0 1px rgba(111,134,134,0.3);
+	color: $color10;
 	text-decoration: none;
+	margin-left: 15px;
 }
 
 .one_cat a::before {
@@ -110,10 +110,7 @@ header{
 	content: attr(data-hover);
 	position: absolute;
 	opacity: 0;
-	text-shadow: 0 0 1px rgba(255,255,255,0.3);
-	-webkit-transform: scale(1.1) translateX(10px) translateY(-10px) rotate(4deg);
-	-moz-transform: scale(1.1) translateX(10px) translateY(-10px) rotate(4deg);
-	transform: scale(1.1) translateX(10px) translateY(-10px) rotate(4deg);
+	@include transform(scale(1.1) translateX(10px) translateY(-10px) rotate(4deg));
 	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
 	-moz-transition: -moz-transform 0.3s, opacity 0.3s;
 	transition: transform 0.3s, opacity 0.3s;
@@ -122,9 +119,7 @@ header{
 
 .one_cat a:hover::before,
 .one_cat a:focus::before {
-	-webkit-transform: scale(1) translateX(0px) translateY(0px) rotate(0deg);
-	-moz-transform: scale(1) translateX(0px) translateY(0px) rotate(0deg);
-	transform: scale(1) translateX(0px) translateY(0px) rotate(0deg);
+	@include transform(scale(1) translateX(0px) translateY(0px) rotate(0deg));
 	opacity: 1;
 }
 
@@ -140,11 +135,12 @@ header{
 		article{
 			width: auto;
 			height: auto;
-			background-color: #E6E6FA;
+			background-color: white;
 			header{
 				.entry-title{
 					color: black;
 					font-weight: 900;
+					font-size: 26px;
 				}
 			}
 			.entry-content{
@@ -155,21 +151,25 @@ header{
 		}
 	}
 	.sidebar{
+		margin-top: 5px;
 		.ads{
 			height: 100px;
 			background-color: $color1;
 		}
 		.related{
-			#yarpp_widget-2{
+			#yarpp_widget-3{
 				h1{
 					color: $color3;
 				}
 				.yarpp-related-widget{
-					p{
-						em{
-							color: $color3;
+					ol{
+						li{
+							a{
+								text-decoration: none;
+							}
 						}
 					}
+					
 				}
 			}
 		}
